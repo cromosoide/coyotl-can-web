@@ -17,6 +17,7 @@
   --color-oro: #fab200;
   --color-cian: #06c4ff;
   --color-violeta: #8002f2;
+  --color-violeta-hover: #6a01cc;
   --color-violeta-oscuro: #2d0057;
   --color-gris-texto: #555555;
   --color-gris-claro: #f5f5f5;
@@ -29,7 +30,37 @@ body {
   font-family: var(--font-nunito), sans-serif;
 }
 
-/* Smooth scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* Animated gradient for Estancia section */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Pulse for CTAs */
+@keyframes pulse-soft {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(128, 2, 242, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(128, 2, 242, 0); }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2.5s ease-in-out infinite;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
 }

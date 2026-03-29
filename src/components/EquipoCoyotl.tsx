@@ -1,36 +1,56 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import { ESPECIALIDADES } from "@/lib/constants";
+import ScrollReveal from "./animations/ScrollReveal";
 
 export default function EquipoCoyotl() {
+  const prefersReduced = useReducedMotion();
+
   return (
-    <section id="nosotros" className="bg-white py-16 sm:py-20">
+    <section id="nosotros" className="bg-white py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#8002f2]">
+        <ScrollReveal className="mb-16 text-center">
+          <span className="mb-3 inline-block rounded-full bg-[#e5006b]/10 px-5 py-2 text-sm font-bold text-[#e5006b]">
             Equipo Coyotl Can
-          </p>
-          <h2 className="mb-4 text-2xl font-extrabold text-[#2d0057] sm:text-3xl md:text-4xl">
+          </span>
+          <h2 className="mb-5 text-3xl font-extrabold tracking-tight text-[#2d0057] sm:text-4xl md:text-5xl">
             Un equipo de expertos respaldando a tu mascota
           </h2>
-          <p className="mx-auto max-w-2xl text-[#555]">
+          <p className="mx-auto max-w-2xl text-lg text-[#555]">
             Médicos con formación UNAM y red de especialistas certificados, liderados por nuestra
             Directora Médica, para brindar atención integral en cada área.
           </p>
-        </div>
+        </ScrollReveal>
 
-        {/* Specialties grid */}
+        {/* Specialties grid — bounce-in staggered */}
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {ESPECIALIDADES.map((esp) => (
-            <div
+          {ESPECIALIDADES.map((esp, i) => (
+            <motion.div
               key={esp.nombre}
-              className="flex flex-col items-center rounded-2xl border border-gray-100 bg-[#f5f5f5] p-6 text-center transition-shadow hover:shadow-md"
+              initial={prefersReduced ? {} : { opacity: 0, scale: 0.8, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{
+                duration: 0.5,
+                delay: i * 0.1,
+                type: "spring",
+                stiffness: 200,
+                damping: 15,
+              }}
+              whileHover={prefersReduced ? {} : { y: -4 }}
+              className="flex flex-col items-center rounded-3xl border border-[#e5006b]/10 bg-[#fafafa] p-7 text-center transition-shadow will-change-transform hover:shadow-lg hover:shadow-[#e5006b]/10"
             >
-              <span className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[#8002f2]/10 text-2xl">
+              <motion.span
+                whileHover={prefersReduced ? {} : { rotate: 10, scale: 1.1 }}
+                className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#e5006b]/10 text-3xl"
+              >
                 {esp.icono}
-              </span>
-              <h3 className="mb-1 text-sm font-bold text-[#2d0057]">{esp.nombre}</h3>
+              </motion.span>
+              <h3 className="mb-2 text-sm font-extrabold text-[#2d0057]">{esp.nombre}</h3>
               <p className="text-xs leading-relaxed text-[#555]">{esp.descripcion}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
