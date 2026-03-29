@@ -10,18 +10,21 @@ const PLACEHOLDER_POSTS = [
     titulo: "¿Cuándo vacunar a tu cachorro? Guía completa",
     extracto: "Conoce el esquema de vacunación ideal para proteger a tu cachorro desde los primeros meses.",
     pilar: "Educativo",
+    imagen: "https://images.unsplash.com/photo-1587764379873-97837921fd44?w=600&q=80",
   },
   {
-    slug: "senales-emergencia-mascota",
-    titulo: "5 señales de emergencia en tu mascota",
-    extracto: "Aprende a identificar los signos de alerta que requieren atención veterinaria inmediata.",
+    slug: "cuidado-dental-mascotas",
+    titulo: "¿Por qué es importante la limpieza dental de tu mascota?",
+    extracto: "El cuidado dental previene enfermedades y mejora la calidad de vida de tu compañero.",
     pilar: "Tips",
+    imagen: "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?w=600&q=80",
   },
   {
     slug: "cuidados-despues-intervencion",
     titulo: "Cuidados post-intervención de mínima invasión",
     extracto: "Tu mascota se recupera más rápido con estos cuidados esenciales en casa.",
     pilar: "Educativo",
+    imagen: "https://images.unsplash.com/photo-1544568100-847a948585b9?w=600&q=80",
   },
 ];
 
@@ -51,8 +54,13 @@ export default function BlogPreview() {
               whileHover={prefersReduced ? {} : { y: -4 }}
               className="overflow-hidden rounded-3xl border border-[#ff006b]/10 bg-white shadow-sm transition-shadow will-change-transform hover:shadow-lg hover:shadow-[#ff006b]/5"
             >
-              <div className="flex h-52 items-center justify-center bg-gradient-to-br from-[#ff006b]/10 to-[#8b00fb]/10">
-                <span className="text-5xl">🐾</span>
+              <div className="relative h-52 overflow-hidden">
+                <img
+                  src={post.imagen}
+                  alt={post.titulo}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
               </div>
               <div className="p-6">
                 <span className="mb-3 inline-block rounded-full bg-[#4bbb00]/10 px-4 py-1 text-xs font-bold text-[#4bbb00]">

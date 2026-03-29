@@ -97,7 +97,7 @@ export default function LandingEstanciaClient() {
         </div>
       </section>
 
-      {/* Urgencia */}
+      {/* Disponibilidad limitada */}
       <section className="bg-[#fafafa] py-16 sm:py-24">
         <div className="mx-auto max-w-2xl px-4 text-center sm:px-6">
           <ScrollReveal>

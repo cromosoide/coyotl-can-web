@@ -103,11 +103,13 @@ function ReviewCard({
   mascota,
   texto,
   rating,
+  avatar,
 }: {
   nombre: string;
   mascota: string;
   texto: string;
   rating: number;
+  avatar?: string;
 }) {
   return (
     <div className="rounded-3xl border border-[#ff006b]/10 bg-[#fafafa] p-7 transition-shadow hover:shadow-lg hover:shadow-[#ff006b]/5">
@@ -119,9 +121,19 @@ function ReviewCard({
         ))}
       </div>
       <p className="mb-5 text-sm leading-relaxed text-[#555]">&ldquo;{texto}&rdquo;</p>
-      <div className="border-t border-gray-200 pt-4">
-        <p className="font-bold text-[#2d0057]">{nombre}</p>
-        <p className="text-xs text-[#555]">{mascota}</p>
+      <div className="flex items-center gap-3 border-t border-gray-200 pt-4">
+        {avatar && (
+          <img
+            src={avatar}
+            alt={mascota}
+            className="h-10 w-10 rounded-full object-cover"
+            loading="lazy"
+          />
+        )}
+        <div>
+          <p className="font-bold text-[#2d0057]">{nombre}</p>
+          <p className="text-xs text-[#555]">{mascota}</p>
+        </div>
       </div>
     </div>
   );

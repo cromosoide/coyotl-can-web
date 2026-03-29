@@ -26,6 +26,7 @@ export const SERVICIOS = [
       "Atención veterinaria integral con revisión completa, estudios y seguimiento personalizado para tu mascota.",
     precio: "$250",
     icono: "🩺",
+    imagen: "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=600&q=80",
     whatsappMsg:
       "https://wa.me/5215634461745?text=Hola%2C%20quiero%20agendar%20una%20consulta%20m%C3%A9dica",
   },
@@ -37,17 +38,19 @@ export const SERVICIOS = [
       "Con profesionales que los cuidan como propios. Alimentación, cuidado diario y foto de tu mascota.",
     precio: "Desde $350/día",
     icono: "🏡",
+    imagen: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&q=80",
     whatsappMsg:
       "https://wa.me/5215634461745?text=Hola%2C%20quiero%20reservar%20una%20estancia",
   },
   {
     id: "estetica",
     nombre: "Estética Coyotl",
-    subtitulo: "Grooming profesional",
+    subtitulo: "Servicio completo de belleza",
     descripcion:
       "Baño, corte, limpieza de oídos y más. Higiene profunda sin estrés para tu mascota.",
     precio: "Desde $300",
     icono: "✂️",
+    imagen: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600&q=80",
     whatsappMsg:
       "https://wa.me/5215634461745?text=Hola%2C%20quiero%20agendar%20est%C3%A9tica%20para%20mi%20mascota",
   },
@@ -59,6 +62,7 @@ export const SERVICIOS = [
       "Esquema de vacunación completo y desparasitación para mantener a tu mascota protegida.",
     precio: "Desde $200",
     icono: "💉",
+    imagen: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80",
     whatsappMsg:
       "https://wa.me/5215634461745?text=Hola%2C%20quiero%20agendar%20vacunaci%C3%B3n",
   },
@@ -81,9 +85,9 @@ export const OTROS_SERVICIOS = [
     icono: "🔬",
   },
   {
-    nombre: "Urgencias",
-    descripcion: "Atención inmediata cuando más lo necesitas.",
-    icono: "🚨",
+    nombre: "Odontología Veterinaria",
+    descripcion: "Limpieza dental y cuidado oral profesional.",
+    icono: "🦷",
   },
 ] as const;
 
@@ -106,6 +110,7 @@ export const REVIEWS = [
     texto:
       "La intervención fue increíble. Luna se recuperó en solo 10 días y apenas tiene cicatriz. El equipo de Coyotl Can nos dio mucha confianza desde el primer momento.",
     rating: 5,
+    avatar: "https://images.unsplash.com/photo-1552053831-71594a27632d?w=120&q=80",
   },
   {
     nombre: "Roberto Hernández",
@@ -113,13 +118,15 @@ export const REVIEWS = [
     texto:
       "Por fin una clínica que entiende a los gatos. Michi siempre odiaba ir al veterinario, pero aquí estuvo tranquilo. La atención es de primer nivel.",
     rating: 5,
+    avatar: "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=120&q=80",
   },
   {
     nombre: "Ana Martínez",
     mascota: "Rocky · Bulldog",
     texto:
-      "Salvaron a Rocky de una emergencia. Su dedicación y conocimiento son excepcionales. No cambiaríamos de clínica por nada.",
+      "La atención a Rocky fue excepcional. Su dedicación y conocimiento son de primer nivel. No cambiaríamos de clínica por nada.",
     rating: 5,
+    avatar: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=120&q=80",
   },
 ] as const;
 

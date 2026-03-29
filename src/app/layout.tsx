@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "clínica veterinaria cdmx",
     "veterinario lindavista",
     "estancia mascotas cdmx",
-    "grooming cdmx",
+    "estética canina cdmx",
     "vacunación mascotas",
     "coyotl can",
   ],

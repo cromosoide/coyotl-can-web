@@ -50,7 +50,7 @@ export default function Footer() {
               <li><a href="#servicios" className="transition-colors hover:text-white">Estética Coyotl</a></li>
               <li><a href="#servicios" className="transition-colors hover:text-white">Vacunación y Preventivos</a></li>
               <li><a href="#servicios" className="transition-colors hover:text-white">Intervención de Mínima Invasión</a></li>
-              <li><a href="#servicios" className="transition-colors hover:text-white">Urgencias</a></li>
+              <li><a href="#servicios" className="transition-colors hover:text-white">Odontología Veterinaria</a></li>
             </ul>
           </div>
 
