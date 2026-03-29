@@ -74,7 +74,7 @@ export default function Navbar() {
               {activeSection === link.href.replace("#", "") && (
                 <motion.span
                   layoutId="nav-indicator"
-                  className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-[#e5006b]"
+                  className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-[#ff006b]"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
@@ -87,7 +87,7 @@ export default function Navbar() {
           href={CONTACTO.whatsappMensaje}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden items-center gap-2 rounded-xl bg-[#8002f2] px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:bg-[#6a01cc] hover:shadow-lg active:scale-95 md:inline-flex"
+          className="hidden items-center gap-2 rounded-xl bg-[#8b00fb] px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:bg-[#7400d4] hover:shadow-lg active:scale-95 md:inline-flex"
         >
           Agendar cita
         </a>
@@ -135,7 +135,7 @@ export default function Navbar() {
             href={CONTACTO.whatsappMensaje}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-[#8002f2] px-5 py-3 text-sm font-bold text-white"
+            className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-[#8b00fb] px-5 py-3 text-sm font-bold text-white"
           >
             Agendar cita
           </a>

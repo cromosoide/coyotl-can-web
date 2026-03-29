@@ -4,10 +4,10 @@ import ScrollReveal from "./animations/ScrollReveal";
 import AnimatedCounter from "./animations/AnimatedCounter";
 
 const stats = [
-  { target: 15, suffix: "+", label: "Años de experiencia", sublabel: "Cuidando a tu familia animal", color: "#e5006b" },
-  { target: 1000, suffix: "+", label: "Familias atendidas", sublabel: "Que confían en nosotros", color: "#8002f2" },
-  { target: 500, suffix: "+", label: "Intervenciones exitosas", sublabel: "De mínima invasión", color: "#70b62c" },
-  { target: 5, suffix: ".0", label: "Estrellas en Google", sublabel: "Calificación perfecta", color: "#fab200" },
+  { target: 15, suffix: "+", label: "Años de experiencia", sublabel: "Cuidando a tu familia animal", color: "#ff006b" },
+  { target: 1000, suffix: "+", label: "Familias atendidas", sublabel: "Que confían en nosotros", color: "#8b00fb" },
+  { target: 500, suffix: "+", label: "Intervenciones exitosas", sublabel: "De mínima invasión", color: "#4bbb00" },
+  { target: 5, suffix: ".0", label: "Estrellas en Google", sublabel: "Calificación perfecta", color: "#ffab00" },
 ];
 
 export default function NumeroStats() {
@@ -15,13 +15,13 @@ export default function NumeroStats() {
     <section className="relative overflow-hidden bg-[#2d0057] py-20 sm:py-28">
       {/* Pattern overlay */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: "radial-gradient(circle, #e5006b 1px, transparent 1px)",
+        backgroundImage: "radial-gradient(circle, #ff006b 1px, transparent 1px)",
         backgroundSize: "40px 40px",
       }} />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="mb-16 text-center">
-          <span className="mb-3 inline-block rounded-full border border-[#e5006b]/30 bg-[#e5006b]/10 px-5 py-2 text-sm font-bold text-[#e5006b]">
+          <span className="mb-3 inline-block rounded-full border border-[#ff006b]/30 bg-[#ff006b]/10 px-5 py-2 text-sm font-bold text-[#ff006b]">
             Números que hablan
           </span>
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">

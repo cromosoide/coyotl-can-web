@@ -32,7 +32,7 @@ export default function BlogPreview() {
     <section className="bg-[#fafafa] py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="mb-16 text-center">
-          <span className="mb-3 inline-block rounded-full bg-[#70b62c]/10 px-5 py-2 text-sm font-bold text-[#70b62c]">
+          <span className="mb-3 inline-block rounded-full bg-[#4bbb00]/10 px-5 py-2 text-sm font-bold text-[#4bbb00]">
             Blog
           </span>
           <h2 className="mb-5 text-3xl font-extrabold tracking-tight text-[#2d0057] sm:text-4xl">
@@ -49,18 +49,18 @@ export default function BlogPreview() {
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.5, delay: i * 0.12 }}
               whileHover={prefersReduced ? {} : { y: -4 }}
-              className="overflow-hidden rounded-3xl border border-[#e5006b]/10 bg-white shadow-sm transition-shadow will-change-transform hover:shadow-lg hover:shadow-[#e5006b]/5"
+              className="overflow-hidden rounded-3xl border border-[#ff006b]/10 bg-white shadow-sm transition-shadow will-change-transform hover:shadow-lg hover:shadow-[#ff006b]/5"
             >
-              <div className="flex h-52 items-center justify-center bg-gradient-to-br from-[#e5006b]/10 to-[#8002f2]/10">
+              <div className="flex h-52 items-center justify-center bg-gradient-to-br from-[#ff006b]/10 to-[#8b00fb]/10">
                 <span className="text-5xl">🐾</span>
               </div>
               <div className="p-6">
-                <span className="mb-3 inline-block rounded-full bg-[#70b62c]/10 px-4 py-1 text-xs font-bold text-[#70b62c]">
+                <span className="mb-3 inline-block rounded-full bg-[#4bbb00]/10 px-4 py-1 text-xs font-bold text-[#4bbb00]">
                   {post.pilar}
                 </span>
                 <h3 className="mb-2 text-base font-extrabold text-[#2d0057]">{post.titulo}</h3>
                 <p className="mb-5 text-sm text-[#555]">{post.extracto}</p>
-                <span className="group inline-flex items-center gap-1 text-sm font-bold text-[#e5006b]">
+                <span className="group inline-flex items-center gap-1 text-sm font-bold text-[#ff006b]">
                   Leer más
                   <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
                 </span>
@@ -72,7 +72,7 @@ export default function BlogPreview() {
         <ScrollReveal delay={0.3} className="mt-12 text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 rounded-2xl border-2 border-[#e5006b] px-7 py-3.5 text-sm font-bold text-[#e5006b] transition-all hover:bg-[#e5006b] hover:text-white active:scale-95"
+            className="inline-flex items-center gap-2 rounded-2xl border-2 border-[#ff006b] px-7 py-3.5 text-sm font-bold text-[#ff006b] transition-all hover:bg-[#ff006b] hover:text-white active:scale-95"
           >
             Ver todos los artículos
           </Link>

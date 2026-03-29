@@ -29,7 +29,7 @@ export default function Resenas({ limit }: ResenasProps) {
     <section id="resenas" className="bg-white py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="mb-16 text-center">
-          <span className="mb-3 inline-block rounded-full bg-[#e5006b]/10 px-5 py-2 text-sm font-bold text-[#e5006b]">
+          <span className="mb-3 inline-block rounded-full bg-[#ff006b]/10 px-5 py-2 text-sm font-bold text-[#ff006b]">
             Reseñas
           </span>
           <h2 className="mb-5 text-3xl font-extrabold tracking-tight text-[#2d0057] sm:text-4xl md:text-5xl">
@@ -45,7 +45,7 @@ export default function Resenas({ limit }: ResenasProps) {
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
             </svg>
             <span className="text-base font-extrabold text-[#2d0057]">5.0</span>
-            <div className="flex text-[#fab200]">
+            <div className="flex text-[#ffab00]">
               {[...Array(5)].map((_, i) => (
                 <svg key={i} viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -86,7 +86,7 @@ export default function Resenas({ limit }: ResenasProps) {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`h-2.5 rounded-full transition-all ${
-                  i === current ? "w-8 bg-[#e5006b]" : "w-2.5 bg-gray-300"
+                  i === current ? "w-8 bg-[#ff006b]" : "w-2.5 bg-gray-300"
                 }`}
                 aria-label={`Ver reseña ${i + 1}`}
               />
@@ -110,8 +110,8 @@ function ReviewCard({
   rating: number;
 }) {
   return (
-    <div className="rounded-3xl border border-[#e5006b]/10 bg-[#fafafa] p-7 transition-shadow hover:shadow-lg hover:shadow-[#e5006b]/5">
-      <div className="mb-4 flex text-[#fab200]">
+    <div className="rounded-3xl border border-[#ff006b]/10 bg-[#fafafa] p-7 transition-shadow hover:shadow-lg hover:shadow-[#ff006b]/5">
+      <div className="mb-4 flex text-[#ffab00]">
         {[...Array(rating)].map((_, i) => (
           <svg key={i} viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />

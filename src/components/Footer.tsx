@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-[#2d0057] text-white">
       {/* Subtle pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: "radial-gradient(circle, #e5006b 1px, transparent 1px)",
+        backgroundImage: "radial-gradient(circle, #ff006b 1px, transparent 1px)",
         backgroundSize: "30px 30px",
       }} />
 
@@ -29,7 +29,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white transition-all hover:bg-[#e5006b] hover:scale-105"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white transition-all hover:bg-[#ff006b] hover:scale-105"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
                     <path d={social.path} />
@@ -41,7 +41,7 @@ export default function Footer() {
 
           {/* Servicios */}
           <div>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-[#e5006b]">
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-[#ff006b]">
               Servicios
             </h4>
             <ul className="space-y-3 text-sm text-white/60">
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Contacto */}
           <div>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-[#e5006b]">
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-[#ff006b]">
               Contacto
             </h4>
             <ul className="space-y-3 text-sm text-white/60">
@@ -81,14 +81,14 @@ export default function Footer() {
 
           {/* Horario + Legal */}
           <div>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-[#e5006b]">
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-[#ff006b]">
               Horario
             </h4>
             <ul className="mb-8 space-y-3 text-sm text-white/60">
               <li>Lun - Sáb: 9:00 - 20:00</li>
               <li>Dom: 10:00 - 14:00</li>
             </ul>
-            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-[#e5006b]">
+            <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-[#ff006b]">
               Legal
             </h4>
             <ul className="space-y-3 text-sm text-white/60">

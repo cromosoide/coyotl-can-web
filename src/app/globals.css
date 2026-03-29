@@ -11,13 +11,13 @@
   --font-sans: var(--font-nunito);
 
   /* Paleta Coyotl Can */
-  --color-rosa: #e5006b;
-  --color-rosa-hover: #cc005f;
-  --color-verde: #70b62c;
-  --color-oro: #fab200;
-  --color-cian: #06c4ff;
-  --color-violeta: #8002f2;
-  --color-violeta-hover: #6a01cc;
+  --color-rosa: #ff006b;
+  --color-rosa-hover: #e6005f;
+  --color-verde: #4bbb00;
+  --color-oro: #ffab00;
+  --color-cian: #00c7ff;
+  --color-violeta: #8b00fb;
+  --color-violeta-hover: #7400d4;
   --color-violeta-oscuro: #2d0057;
   --color-gris-texto: #555555;
   --color-gris-claro: #f5f5f5;

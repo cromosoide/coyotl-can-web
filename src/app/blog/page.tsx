@@ -19,7 +19,7 @@ export default function BlogPage() {
       </p>
       <Link
         href="/"
-        className="rounded-xl bg-[#e5006b] px-6 py-3 font-bold text-white transition-colors hover:bg-[#cc005f]"
+        className="rounded-xl bg-[#ff006b] px-6 py-3 font-bold text-white transition-colors hover:bg-[#e6005f]"
       >
         Volver al inicio
       </Link>

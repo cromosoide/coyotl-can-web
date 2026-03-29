@@ -26,7 +26,7 @@ export default function OtrosServicios() {
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={prefersReduced ? {} : { y: -4 }}
-              className="flex flex-col items-center rounded-3xl border border-[#e5006b]/10 bg-white p-7 text-center shadow-sm transition-shadow will-change-transform hover:shadow-lg hover:shadow-[#e5006b]/10"
+              className="flex flex-col items-center rounded-3xl border border-[#ff006b]/10 bg-white p-7 text-center shadow-sm transition-shadow will-change-transform hover:shadow-lg hover:shadow-[#ff006b]/10"
             >
               <motion.span
                 whileHover={prefersReduced ? {} : { rotate: 8, scale: 1.1 }}
@@ -40,7 +40,7 @@ export default function OtrosServicios() {
                 href={CONTACTO.whatsappMensaje}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl border-2 border-[#e5006b] px-5 py-2.5 text-sm font-bold text-[#e5006b] transition-all hover:bg-[#e5006b] hover:text-white active:scale-95"
+                className="rounded-2xl border-2 border-[#ff006b] px-5 py-2.5 text-sm font-bold text-[#ff006b] transition-all hover:bg-[#ff006b] hover:text-white active:scale-95"
               >
                 Agendar
               </a>
