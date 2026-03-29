@@ -13,10 +13,10 @@ export default function LandingConsultaClient() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32" style={{ backgroundColor: "#2d0057" }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2d0057] via-[#3d0077] to-[#8b00fb] opacity-80" />
+      <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32" style={{ backgroundColor: "#ff006b" }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#ff006b] via-[#d4005a] to-[#a80047] opacity-90" />
         <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: "radial-gradient(circle, #ff006b 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
           backgroundSize: "50px 50px",
         }} />
 
@@ -26,9 +26,9 @@ export default function LandingConsultaClient() {
             initial={prefersReduced ? {} : { opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#ff006b]/40 bg-[#ff006b]/15 px-5 py-2.5 text-sm font-bold text-white backdrop-blur-sm"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-2.5 text-sm font-bold text-white backdrop-blur-sm"
           >
-            <span className="inline-block h-2.5 w-2.5 animate-pulse rounded-full bg-[#ff006b]" />
+            <span className="inline-block h-2.5 w-2.5 animate-pulse rounded-full bg-white" />
             Atención hoy · Lindavista, CDMX
           </motion.div>
 
@@ -166,7 +166,7 @@ export default function LandingConsultaClient() {
       <MapaContacto />
 
       {/* Mini footer */}
-      <footer className="bg-[#2d0057] py-8 text-center">
+      <footer className="bg-[#ff006b] py-8 text-center">
         <p className="text-xs text-white/40">
           &copy; {new Date().getFullYear()} Coyotl Can · Clínica Veterinaria Integral · Lindavista, CDMX
         </p>

@@ -133,7 +133,7 @@ export default function LandingEstanciaClient() {
       </section>
 
       {/* Mini footer */}
-      <footer className="bg-[#2d0057] py-8 text-center">
+      <footer className="bg-[#ff006b] py-8 text-center">
         <p className="text-xs text-white/40">
           &copy; {new Date().getFullYear()} Coyotl Can · Clínica Veterinaria Integral · Lindavista, CDMX
         </p>

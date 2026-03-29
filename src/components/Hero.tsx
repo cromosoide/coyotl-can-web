@@ -10,13 +10,13 @@ export default function Hero() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden bg-[#2d0057]">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#2d0057] via-[#3d0077] to-[#8b00fb] opacity-80" />
+    <section className="relative overflow-hidden bg-[#ff006b]">
+      {/* Gradient background — rosa protagonista */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#ff006b] via-[#d4005a] to-[#a80047] opacity-90" />
 
       {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: "radial-gradient(circle at 20% 50%, #ff006b 1px, transparent 1px), radial-gradient(circle at 80% 20%, #ff006b 1px, transparent 1px)",
+      <div className="absolute inset-0 opacity-[0.06]" style={{
+        backgroundImage: "radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)",
         backgroundSize: "60px 60px",
       }} />
 
@@ -26,9 +26,9 @@ export default function Hero() {
           initial={prefersReduced ? {} : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#ff006b]/30 bg-[#ff006b]/10 px-5 py-2.5 text-sm font-semibold text-white/90 backdrop-blur-sm"
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm"
         >
-          <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-[#ff006b]" />
+          <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-white" />
           Clínica Veterinaria Integral · Lindavista, CDMX
         </motion.div>
 
@@ -77,7 +77,7 @@ export default function Hero() {
           </a>
           <a
             href={CONTACTO.telefonoLink}
-            className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-[#ff006b]/50 px-8 py-4 text-base font-bold text-white transition-all hover:border-[#ff006b] hover:bg-[#ff006b]/10 active:scale-95 sm:text-lg"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/40 px-8 py-4 text-base font-bold text-white transition-all hover:border-white hover:bg-white/15 active:scale-95 sm:text-lg"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" strokeLinecap="round" strokeLinejoin="round" />

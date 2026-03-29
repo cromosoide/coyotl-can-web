@@ -12,16 +12,16 @@ const stats = [
 
 export default function NumeroStats() {
   return (
-    <section className="relative overflow-hidden bg-[#2d0057] py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-[#ff006b] py-20 sm:py-28">
       {/* Pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: "radial-gradient(circle, #ff006b 1px, transparent 1px)",
+      <div className="absolute inset-0 opacity-[0.06]" style={{
+        backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
         backgroundSize: "40px 40px",
       }} />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="mb-16 text-center">
-          <span className="mb-3 inline-block rounded-full border border-[#ff006b]/30 bg-[#ff006b]/10 px-5 py-2 text-sm font-bold text-[#ff006b]">
+          <span className="mb-3 inline-block rounded-full border border-white/30 bg-white/15 px-5 py-2 text-sm font-bold text-white">
             Números que hablan
           </span>
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
