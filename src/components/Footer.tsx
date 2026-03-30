@@ -85,8 +85,9 @@ export default function Footer() {
               Horario
             </h4>
             <ul className="mb-8 space-y-3 text-sm text-white/60">
-              <li>Lun - Sáb: 9:00 - 20:00</li>
-              <li>Dom: 10:00 - 14:00</li>
+              <li>Lun - Vie: 11:00 - 19:00</li>
+              <li>Sáb: 11:00 - 16:00</li>
+              <li>Dom: Cerrado</li>
             </ul>
             <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-[#ff006b]">
               Legal

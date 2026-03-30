@@ -7,7 +7,7 @@ export const CONTACTO = {
   email: "hola@coyotlcan.mx",
   direccion: "Irapuato 11, Col. Lindavista, Alcaldía Gustavo A. Madero, CDMX",
   direccionCorta: "Irapuato 11, Lindavista, CDMX",
-  horario: "Lun-Sáb: 9:00 - 20:00 | Dom: 10:00 - 14:00",
+  horario: "Lun-Vie: 11:00 - 19:00 | Sáb: 11:00 - 16:00 | Dom: Cerrado",
   googleMapsEmbed:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.5!2d-99.1297!3d19.4875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sIrapuato+11%2C+Lindavista%2C+CDMX!5e0!3m2!1ses!2smx!4v1",
   redes: {

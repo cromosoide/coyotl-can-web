@@ -13,7 +13,8 @@ const SERVICIOS_AGENDA = [
   "Intervención de Mínima Invasión",
 ];
 
-const HORARIOS = ["09:00", "10:00", "11:00", "12:00", "13:00", "16:00", "17:00", "18:00"];
+const HORARIOS_SEMANA = ["11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"];
+const HORARIOS_SABADO = ["11:00", "12:00", "13:00", "14:00", "15:00"];
 
 const DIAS = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
 const MESES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
@@ -70,6 +71,12 @@ export default function AgendaModal({ open, onClose, defaultService }: AgendaMod
   const firstDayOfWeek = new Date(calYear, calMonth, 1).getDay();
   const today = new Date();
   today.setHours(0, 0, 0, 0);
+
+  function isSaturday(dateStr: string) {
+    return new Date(dateStr + "T12:00:00").getDay() === 6;
+  }
+
+  const HORARIOS = selectedDate && isSaturday(selectedDate) ? HORARIOS_SABADO : HORARIOS_SEMANA;
 
   function isDisabled(day: number) {
     const d = new Date(calYear, calMonth, day);
