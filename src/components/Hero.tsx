@@ -1,15 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { CONTACTO } from "@/lib/constants";
 import AnimatedCounter from "./animations/AnimatedCounter";
+import AgendaModal from "./AgendaModal";
 
 const taglineWords = "Cuidamos a tu familia animal con el trato que merece".split(" ");
 
 export default function Hero() {
   const prefersReduced = useReducedMotion();
+  const [showAgenda, setShowAgenda] = useState(false);
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#fff0f7] via-white to-[#f9fafb]">
@@ -63,12 +65,12 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 1.3 }}
               className="mb-10 flex flex-col gap-3 sm:flex-row sm:gap-4"
             >
-              <Link
-                href="/landing/consulta"
+              <button
+                onClick={() => setShowAgenda(true)}
                 className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#ff006b] px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-[#ff006b]/20 transition-all hover:bg-[#e6005f] hover:shadow-xl active:scale-95"
               >
                 Agendar cita
-              </Link>
+              </button>
               <a
                 href={CONTACTO.telefonoLink}
                 className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-[#ff006b] px-7 py-3.5 text-base font-bold text-[#ff006b] transition-all hover:bg-[#ff006b]/5 active:scale-95"
@@ -129,6 +131,8 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+
+      <AgendaModal open={showAgenda} onClose={() => setShowAgenda(false)} defaultService="Consulta General" />
     </section>
   );
 }
