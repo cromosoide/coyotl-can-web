@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { CONTACTO } from "@/lib/constants";
+import AgendaModal from "./AgendaModal";
 
 const NAV_LINKS = [
   { label: "Servicios", href: "#servicios" },
@@ -15,6 +16,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [showAgenda, setShowAgenda] = useState(false);
   const prefersReduced = useReducedMotion();
 
   useEffect(() => {
@@ -41,6 +43,7 @@ export default function Navbar() {
   }, []);
 
   return (
+    <>
     <motion.nav
       initial={prefersReduced ? {} : { y: -100 }}
       animate={{ y: 0 }}
@@ -79,12 +82,12 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href="/landing/consulta"
+        <button
+          onClick={() => setShowAgenda(true)}
           className="hidden items-center gap-2 rounded-xl bg-[#ff006b] px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:bg-[#e6005f] hover:shadow-lg active:scale-95 md:inline-flex"
         >
           Agendar cita
-        </a>
+        </button>
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -117,14 +120,17 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="/landing/consulta"
-            className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-[#ff006b] px-5 py-3 text-sm font-bold text-white"
+          <button
+            onClick={() => { setMobileOpen(false); setShowAgenda(true); }}
+            className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-[#ff006b] px-5 py-3 text-sm font-bold text-white"
           >
             Agendar cita
-          </a>
+          </button>
         </motion.div>
       )}
     </motion.nav>
+
+    <AgendaModal open={showAgenda} onClose={() => setShowAgenda(false)} defaultService="Consulta General" />
+    </>
   );
 }
