@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <h3 className="mb-3 text-2xl font-extrabold">Coyotl Can</h3>
+            <img src="/logo-white.svg" alt="Coyotl Can" className="mb-3 h-10 w-auto" />
             <p className="mb-2 text-sm text-white/60">Clínica Veterinaria Integral</p>
             <p className="mb-6 text-sm italic text-white/40">&ldquo;Medicina con alma&rdquo;</p>
             {/* Social */}

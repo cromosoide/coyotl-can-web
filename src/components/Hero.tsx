@@ -118,8 +118,8 @@ export default function Hero() {
           >
             <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-[#ff006b]/10">
               <Image
-                src={IMAGES.hero}
-                alt="Mascota feliz recibiendo atención veterinaria"
+                src="/coyotl-hero.png"
+                alt="Mascota feliz en Coyotl Can clínica veterinaria Lindavista"
                 width={600}
                 height={500}
                 className="h-[500px] w-full object-cover"

@@ -85,8 +85,8 @@ export default function LandingEstanciaClient() {
               className="hidden lg:block"
             >
               <img
-                src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=700&q=80"
-                alt="Mascota cómoda y feliz en un espacio limpio"
+                src="/coyotl-hero.png"
+                alt="Mascota feliz en Coyotl Can Estancia Lindavista"
                 className="rounded-3xl border-4 border-white/10 shadow-2xl"
                 loading="eager"
               />

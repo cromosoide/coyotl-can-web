@@ -80,8 +80,8 @@ export default function EstanciaDestacada() {
             className="hidden lg:block"
           >
             <img
-              src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=700&q=80"
-              alt="Mascota relajada y feliz en un espacio cómodo"
+              src="/coyotl-hero.png"
+              alt="Mascota feliz en Estancia Coyotl Can Lindavista"
               className="rounded-3xl border-4 border-white/10 shadow-2xl"
               loading="lazy"
             />
