@@ -98,7 +98,7 @@ export default function LandingConsultaClient() {
           >
             <img
               src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=800&q=80"
-              alt="Mascota siendo revisada con cariño"
+              alt="Consulta veterinaria en Lindavista CDMX — Coyotl Can clínica veterinaria integral"
               className="rounded-2xl shadow-xl"
               loading="eager"
             />

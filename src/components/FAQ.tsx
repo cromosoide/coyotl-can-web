@@ -64,7 +64,7 @@ const FAQS: FAQItem[] = [
     q: "¿Cuál es el horario de atención de la clínica?",
     a: (
       <>
-        Nuestro horario es de <strong>lunes a viernes de 9:00 a 18:00 hrs</strong> y <strong>sábados de 9:00 a 13:00 hrs</strong>. Los domingos permanecemos cerrados. Para agendar cita fuera de estos horarios o consultar disponibilidad, escríbenos por{" "}
+        Nuestro horario es de <strong>lunes a sábado de 9:00 a 20:00 hrs</strong> y <strong>domingos de 10:00 a 14:00 hrs</strong>. Para agendar cita o consultar disponibilidad, escríbenos por{" "}
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#25D366] underline">WhatsApp</a>.
       </>
     ),
