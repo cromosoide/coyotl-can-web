@@ -1,13 +1,23 @@
-import { createClient } from "@supabase/supabase-js";
+"use client";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
-export const supabase = supabaseUrl && supabaseAnonKey
-  ? createClient(supabaseUrl, supabaseAnonKey)
-  : null as any;
+let _supabase: SupabaseClient | null = null;
 
-// Helper to safely check if supabase is available (for SSR/prerender)
-export function isSupabaseReady() {
-  return Boolean(supabaseUrl && supabaseAnonKey);
+export function getSupabase(): SupabaseClient {
+  if (_supabase) return _supabase;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+  if (!url || !key) throw new Error("Supabase env vars not set");
+  _supabase = createClient(url, key);
+  return _supabase;
 }
+
+// For convenience — lazy getter
+export const supabase = new Proxy({} as SupabaseClient, {
+  get(_target, prop, receiver) {
+    const client = getSupabase();
+    const value = Reflect.get(client, prop, receiver);
+    return typeof value === "function" ? value.bind(client) : value;
+  },
+});
