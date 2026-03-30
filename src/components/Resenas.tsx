@@ -3,16 +3,32 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { REVIEWS } from "@/lib/constants";
+import { supabase } from "@/lib/supabase";
 import ScrollReveal from "./animations/ScrollReveal";
 
 interface ResenasProps {
   limit?: number;
 }
 
+type ReviewData = { nombre: string; mascota: string; texto: string; rating: number; avatar?: string };
+
 export default function Resenas({ limit }: ResenasProps) {
-  const reviews = limit ? REVIEWS.slice(0, limit) : REVIEWS;
-  const [current, setCurrent] = useState(0);
+  const [dbReviews, setDbReviews] = useState<ReviewData[] | null>(null);
   const prefersReduced = useReducedMotion();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    supabase.from("reviews").select("*").eq("visible", true).order("created_at", { ascending: false }).limit(10)
+      .then(({ data }) => {
+        if (data && data.length > 0) {
+          setDbReviews(data.map((r: any) => ({ nombre: r.name, mascota: "", texto: r.text, rating: r.rating })));
+        }
+      });
+  }, []);
+
+  const fallback: ReviewData[] = REVIEWS.map((r) => ({ ...r }));
+  const allReviews = dbReviews && dbReviews.length > 0 ? dbReviews : fallback;
+  const reviews = limit ? allReviews.slice(0, limit) : allReviews;
 
   const next = useCallback(() => {
     setCurrent((c) => (c + 1) % reviews.length);
