@@ -8,6 +8,7 @@ import OtrosServicios from "@/components/OtrosServicios";
 import EstanciaDestacada from "@/components/EstanciaDestacada";
 import Resenas from "@/components/Resenas";
 import BlogPreview from "@/components/BlogPreview";
+import FAQ from "@/components/FAQ";
 import MapaContacto from "@/components/MapaContacto";
 import Footer from "@/components/Footer";
 
@@ -24,6 +25,7 @@ export default function Home() {
       <EstanciaDestacada />
       <Resenas />
       <BlogPreview />
+      <FAQ />
       <MapaContacto />
       <Footer />
     </>

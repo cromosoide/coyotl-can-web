@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { trackWhatsAppClick } from "@/lib/analytics";
+import ServiceIcon from "./ServiceIcon";
 
 interface ServiceCardProps {
   nombre: string;
@@ -11,6 +12,7 @@ interface ServiceCardProps {
   descripcion: string;
   precio: string;
   icono: string;
+  iconKey?: string;
   imagen?: string;
   ctaText: string;
   ctaHref: string;
@@ -24,6 +26,7 @@ export default function ServiceCard({
   descripcion,
   precio,
   icono,
+  iconKey,
   imagen,
   ctaText,
   ctaHref,
@@ -61,8 +64,8 @@ export default function ServiceCard({
       )}
 
       <div className="flex flex-1 flex-col p-7">
-        <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ff006b]/10 text-2xl transition-transform group-hover:rotate-3">
-          {icono}
+        <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ff006b]/10 text-[#ff006b] transition-transform group-hover:rotate-3">
+          {iconKey ? <ServiceIcon service={iconKey} className="h-6 w-6" /> : <span className="text-2xl">{icono}</span>}
         </span>
 
         <h3 className="mb-1 text-lg font-extrabold text-[#2d0057]">{nombre}</h3>

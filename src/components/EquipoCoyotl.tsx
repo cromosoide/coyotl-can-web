@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ESPECIALIDADES } from "@/lib/constants";
 import ScrollReveal from "./animations/ScrollReveal";
+import ServiceIcon from "./ServiceIcon";
 
 export default function EquipoCoyotl() {
   const prefersReduced = useReducedMotion();
@@ -44,9 +45,9 @@ export default function EquipoCoyotl() {
             >
               <motion.span
                 whileHover={prefersReduced ? {} : { rotate: 10, scale: 1.1 }}
-                className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#ff006b]/10 text-3xl"
+                className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#ff006b]/10 text-[#ff006b]"
               >
-                {esp.icono}
+                <ServiceIcon service={esp.iconKey} className="h-7 w-7" />
               </motion.span>
               <h3 className="mb-2 text-sm font-extrabold text-[#2d0057]">{esp.nombre}</h3>
               <p className="text-xs leading-relaxed text-[#555]">{esp.descripcion}</p>

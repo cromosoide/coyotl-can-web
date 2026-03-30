@@ -15,8 +15,17 @@ export default function LandingConsultaClient() {
 
   return (
     <main>
+      {/* Breadcrumb */}
+      <nav className="bg-[#f9fafb] px-4 py-3 text-xs text-[#555] sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <a href="/" className="text-[#ff006b] hover:underline">Inicio</a>
+          <span className="mx-2">›</span>
+          <span>Consulta Veterinaria</span>
+        </div>
+      </nav>
+
       {/* Hero — fondo blanco, layout 50/50 */}
-      <section className="bg-white py-20 sm:py-28 lg:py-32">
+      <section className="bg-white py-16 sm:py-24 lg:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <motion.div

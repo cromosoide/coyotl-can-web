@@ -2,9 +2,13 @@ import type { Metadata } from "next";
 import LandingEstanciaClient from "./LandingEstanciaClient";
 
 export const metadata: Metadata = {
-  title: "Estancia Coyotl · Tu mascota en las mejores manos · Lindavista CDMX",
+  title: "Estancia para Mascotas en Lindavista · Coyotl Can",
   description:
-    "Tú al mar, ellos con nosotros. Estancia profesional para tu mascota en Lindavista, CDMX. Cuidado profesional, alimentación y foto diaria.",
+    "Estancia Coyotl: con profesionales que los cuidan como propios. Cuidado profesional, alimentación incluida y foto diaria. Reserva tu lugar.",
+  openGraph: {
+    title: "Estancia para Mascotas en Lindavista · Coyotl Can",
+    description: "Estancia Coyotl: con profesionales que los cuidan como propios.",
+  },
 };
 
 export default function Page() {

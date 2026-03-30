@@ -26,6 +26,7 @@ export const SERVICIOS = [
       "Atención veterinaria integral con revisión completa, estudios y seguimiento personalizado para tu mascota.",
     precio: "$250",
     icono: "🩺",
+    iconKey: "consulta",
     imagen: "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=600&q=80",
     ctaText: "Agendar Consulta",
     ctaHref: "/landing/consulta",
@@ -39,6 +40,7 @@ export const SERVICIOS = [
       "Con profesionales que los cuidan como propios. Alimentación, cuidado diario y foto de tu mascota.",
     precio: "Desde $350/día",
     icono: "🏡",
+    iconKey: "estancia",
     imagen: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&q=80",
     ctaText: "Reservar Estancia",
     ctaHref: "/landing/estancia",
@@ -52,6 +54,7 @@ export const SERVICIOS = [
       "Baño, corte, limpieza de oídos y más. Higiene profunda sin estrés para tu mascota.",
     precio: "Desde $300",
     icono: "✂️",
+    iconKey: "estetica",
     imagen: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600&q=80",
     ctaText: "Agendar Estética",
     ctaHref: "https://wa.me/525534461745?text=Hola%2C%20quisiera%20agendar%20un%20servicio%20de%20Est%C3%A9tica%20Coyotl",
@@ -65,6 +68,7 @@ export const SERVICIOS = [
       "Esquema de vacunación completo y desparasitación para mantener a tu mascota protegida.",
     precio: "Desde $200",
     icono: "💉",
+    iconKey: "vacunacion",
     imagen: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80",
     ctaText: "Agendar Vacunación",
     ctaHref: "https://wa.me/525534461745?text=Hola%2C%20quisiera%20agendar%20una%20cita%20de%20Vacunaci%C3%B3n",
@@ -73,38 +77,18 @@ export const SERVICIOS = [
 ] as const;
 
 export const OTROS_SERVICIOS = [
-  {
-    nombre: "Estancia Coyotl",
-    descripcion: "Cuidado profesional mientras no estás.",
-    icono: "🏡",
-  },
-  {
-    nombre: "Estética Coyotl",
-    descripcion: "Higiene profunda sin estrés.",
-    icono: "✂️",
-  },
-  {
-    nombre: "Laboratorio Interno",
-    descripcion: "Limpieza dental y cuidado oral profesional.",
-    icono: "🔬",
-  },
-  {
-    nombre: "Odontología Veterinaria",
-    descripcion: "Limpieza dental y cuidado oral profesional.",
-    icono: "🦷",
-  },
+  { nombre: "Estancia Coyotl", descripcion: "Cuidado profesional mientras no estás.", icono: "🏡", iconKey: "estancia" },
+  { nombre: "Estética Coyotl", descripcion: "Higiene profunda sin estrés.", icono: "✂️", iconKey: "estetica" },
+  { nombre: "Laboratorio Interno", descripcion: "Estudios y análisis en la clínica.", icono: "🔬", iconKey: "laboratorio" },
+  { nombre: "Odontología Veterinaria", descripcion: "Limpieza dental y cuidado oral profesional.", icono: "🦷", iconKey: "odontologia" },
 ] as const;
 
 export const ESPECIALIDADES = [
-  { nombre: "Consulta Médica", descripcion: "Atención veterinaria integral", icono: "🩺" },
-  { nombre: "Ortopedia", descripcion: "Corrección y rehabilitación estructural", icono: "🦴" },
-  { nombre: "Oftalmología", descripcion: "Cuidado avanzado de la visión", icono: "👁️" },
-  { nombre: "Radiología", descripcion: "Estudios de imagen inmediatos", icono: "📷" },
-  {
-    nombre: "Aves y Especies Exóticas",
-    descripcion: "Atención especializada con médicos certificados",
-    icono: "🦜",
-  },
+  { nombre: "Consulta Médica", descripcion: "Atención veterinaria integral", icono: "🩺", iconKey: "consulta" },
+  { nombre: "Ortopedia", descripcion: "Corrección y rehabilitación estructural", icono: "🦴", iconKey: "ortopedia" },
+  { nombre: "Oftalmología", descripcion: "Cuidado avanzado de la visión", icono: "👁️", iconKey: "oftalmologia" },
+  { nombre: "Radiología", descripcion: "Estudios de imagen inmediatos", icono: "📷", iconKey: "radiologia" },
+  { nombre: "Aves y Especies Exóticas", descripcion: "Atención especializada con médicos certificados", icono: "🦜", iconKey: "exoticos" },
 ] as const;
 
 export const REVIEWS = [

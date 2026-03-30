@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { OTROS_SERVICIOS, CONTACTO } from "@/lib/constants";
 import ScrollReveal from "./animations/ScrollReveal";
+import ServiceIcon from "./ServiceIcon";
 
 export default function OtrosServicios() {
   const prefersReduced = useReducedMotion();
@@ -30,9 +31,9 @@ export default function OtrosServicios() {
             >
               <motion.span
                 whileHover={prefersReduced ? {} : { rotate: 8, scale: 1.1 }}
-                className="mb-4 text-4xl"
+                className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ff006b]/10 text-[#ff006b]"
               >
-                {servicio.icono}
+                <ServiceIcon service={servicio.iconKey} className="h-7 w-7" />
               </motion.span>
               <h3 className="mb-2 font-extrabold text-[#2d0057]">{servicio.nombre}</h3>
               <p className="mb-5 flex-1 text-sm text-[#555]">{servicio.descripcion}</p>

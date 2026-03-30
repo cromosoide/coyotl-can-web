@@ -13,6 +13,15 @@ export default function LandingEstanciaClient() {
 
   return (
     <main>
+      {/* Breadcrumb */}
+      <nav className="bg-[#f9fafb] px-4 py-3 text-xs text-[#555] sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <a href="/" className="text-[#ff006b] hover:underline">Inicio</a>
+          <span className="mx-2">›</span>
+          <span>Estancia Coyotl</span>
+        </div>
+      </nav>
+
       {/* Hero */}
       <section
         className="animate-gradient-shift relative overflow-hidden py-20 sm:py-28 lg:py-32"
