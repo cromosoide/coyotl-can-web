@@ -154,6 +154,8 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${nunito.variable} h-full antialiased`}>
       <head>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdVet) }}
