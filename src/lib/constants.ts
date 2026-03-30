@@ -27,8 +27,9 @@ export const SERVICIOS = [
     precio: "$250",
     icono: "🩺",
     imagen: "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=600&q=80",
-    whatsappMsg:
-      "https://wa.me/5215634461745?text=Hola%2C%20quiero%20agendar%20una%20consulta%20m%C3%A9dica",
+    ctaText: "Agendar Consulta",
+    ctaHref: "/landing/consulta",
+    ctaExternal: false,
   },
   {
     id: "estancia",
@@ -39,8 +40,9 @@ export const SERVICIOS = [
     precio: "Desde $350/día",
     icono: "🏡",
     imagen: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&q=80",
-    whatsappMsg:
-      "https://wa.me/5215634461745?text=Hola%2C%20quiero%20reservar%20una%20estancia",
+    ctaText: "Reservar Estancia",
+    ctaHref: "/landing/estancia",
+    ctaExternal: false,
   },
   {
     id: "estetica",
@@ -51,8 +53,9 @@ export const SERVICIOS = [
     precio: "Desde $300",
     icono: "✂️",
     imagen: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600&q=80",
-    whatsappMsg:
-      "https://wa.me/5215634461745?text=Hola%2C%20quiero%20agendar%20est%C3%A9tica%20para%20mi%20mascota",
+    ctaText: "Agendar Estética",
+    ctaHref: "https://wa.me/525534461745?text=Hola%2C%20quisiera%20agendar%20un%20servicio%20de%20Est%C3%A9tica%20Coyotl",
+    ctaExternal: true,
   },
   {
     id: "preventivo",
@@ -63,8 +66,9 @@ export const SERVICIOS = [
     precio: "Desde $200",
     icono: "💉",
     imagen: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80",
-    whatsappMsg:
-      "https://wa.me/5215634461745?text=Hola%2C%20quiero%20agendar%20vacunaci%C3%B3n",
+    ctaText: "Agendar Vacunación",
+    ctaHref: "https://wa.me/525534461745?text=Hola%2C%20quisiera%20agendar%20una%20cita%20de%20Vacunaci%C3%B3n",
+    ctaExternal: true,
   },
 ] as const;
 
@@ -81,7 +85,7 @@ export const OTROS_SERVICIOS = [
   },
   {
     nombre: "Laboratorio Interno",
-    descripcion: "Resultados el mismo día para decisiones rápidas.",
+    descripcion: "Limpieza dental y cuidado oral profesional.",
     icono: "🔬",
   },
   {
@@ -148,8 +152,8 @@ export const FEATURES = [
     icono: "❤️",
   },
   {
-    titulo: "Resultados el mismo día",
-    descripcion: "Decisiones rápidas y claras",
+    titulo: "Medicina con alma",
+    descripcion: "Cuidamos a tu familia animal con el trato que merece",
     icono: "⚡",
   },
 ] as const;

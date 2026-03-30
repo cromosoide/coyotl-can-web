@@ -8,7 +8,7 @@ export default function WhatsAppButton() {
 
   return (
     <motion.a
-      href={CONTACTO.whatsappMensaje}
+      href="https://wa.me/525534461745"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp"

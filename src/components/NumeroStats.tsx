@@ -36,15 +36,15 @@ export default function NumeroStats() {
                 <AnimatedCounter
                   target={stat.target}
                   suffix={stat.suffix}
-                  className="block text-5xl font-extrabold sm:text-6xl"
+                  className="block text-5xl font-extrabold text-white sm:text-6xl"
                   duration={2.5}
                 />
                 <div
-                  className="mx-auto my-4 h-1 w-12 rounded-full"
+                  className="mx-auto my-4 h-1 w-12 rounded-full bg-white/40"
                   style={{ backgroundColor: stat.color }}
                 />
                 <p className="text-base font-bold text-white">{stat.label}</p>
-                <p className="mt-1 text-sm text-white/50">{stat.sublabel}</p>
+                <p className="mt-1 text-sm text-white/70">{stat.sublabel}</p>
               </div>
             </ScrollReveal>
           ))}
