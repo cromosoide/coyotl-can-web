@@ -8,7 +8,7 @@ export default function OtrosServicios() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="bg-[#fafafa] py-20 sm:py-28 lg:py-32">
+    <section className="bg-white py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="mb-16 text-center">
           <h2 className="mb-5 text-3xl font-extrabold tracking-tight text-[#2d0057] sm:text-4xl">

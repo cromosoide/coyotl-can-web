@@ -247,7 +247,7 @@ export default function AgendaModal({ open, onClose, defaultService }: AgendaMod
             <button
               onClick={() => setStep(2)}
               disabled={!selectedDate || !selectedTime}
-              className="w-full rounded-2xl bg-[#8b00fb] py-3.5 font-bold text-white transition-colors hover:bg-[#7400d4] disabled:opacity-40"
+              className="w-full rounded-2xl bg-[#ff006b] py-3.5 font-bold text-white transition-colors hover:bg-[#e6005f] disabled:opacity-40"
             >
               Continuar →
             </button>
@@ -292,7 +292,7 @@ export default function AgendaModal({ open, onClose, defaultService }: AgendaMod
 
             <div className="mt-6 flex gap-3">
               <button onClick={() => setStep(1)} className="flex-1 rounded-2xl border border-gray-200 py-3 font-bold text-[#555]">← Volver</button>
-              <button onClick={handleConfirm} disabled={saving} className="flex-1 rounded-2xl bg-[#8b00fb] py-3 font-bold text-white disabled:opacity-50">
+              <button onClick={handleConfirm} disabled={saving} className="flex-1 rounded-2xl bg-[#ff006b] py-3 font-bold text-white disabled:opacity-50">
                 {saving ? "Agendando..." : "Confirmar cita →"}
               </button>
             </div>

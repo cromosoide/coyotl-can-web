@@ -32,7 +32,7 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   const prefersReduced = useReducedMotion();
 
-  const buttonClass = "inline-flex items-center justify-center gap-2 rounded-2xl bg-[#8b00fb] px-5 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#7400d4] hover:shadow-lg hover:shadow-[#8b00fb]/25 active:scale-95";
+  const buttonClass = "inline-flex items-center justify-center gap-2 rounded-2xl bg-[#ff006b] px-5 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#e6005f] hover:shadow-lg hover:shadow-[#ff006b]/25 active:scale-95";
 
   return (
     <motion.div

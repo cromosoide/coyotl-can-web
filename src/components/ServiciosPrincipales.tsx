@@ -6,7 +6,7 @@ import ScrollReveal from "./animations/ScrollReveal";
 
 export default function ServiciosPrincipales() {
   return (
-    <section id="servicios" className="bg-[#fafafa] py-20 sm:py-28 lg:py-32">
+    <section id="servicios" className="bg-white py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal className="mb-16 text-center">

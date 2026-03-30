@@ -15,76 +15,84 @@ export default function LandingConsultaClient() {
 
   return (
     <main>
-      {/* Hero */}
-      <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32" style={{ backgroundColor: "#ff006b" }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#ff006b] via-[#d4005a] to-[#a80047] opacity-90" />
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
-          backgroundSize: "50px 50px",
-        }} />
+      {/* Hero — fondo blanco, layout 50/50 */}
+      <section className="bg-white py-20 sm:py-28 lg:py-32">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div>
+            <motion.div
+              initial={prefersReduced ? {} : { opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="mb-8 inline-flex items-center gap-2 rounded-full bg-[#fff0f7] px-5 py-2.5 text-sm font-bold text-[#ff006b]"
+            >
+              <span className="inline-block h-2.5 w-2.5 animate-pulse rounded-full bg-[#ff006b]" />
+              Atención hoy · Lindavista, CDMX
+            </motion.div>
 
-        <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
-          {/* Pulsing urgency badge */}
-          <motion.div
-            initial={prefersReduced ? {} : { opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-2.5 text-sm font-bold text-white backdrop-blur-sm"
-          >
-            <span className="inline-block h-2.5 w-2.5 animate-pulse rounded-full bg-white" />
-            Atención hoy · Lindavista, CDMX
-          </motion.div>
+            <motion.h1
+              initial={prefersReduced ? {} : { opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-5 text-4xl font-extrabold leading-[1.1] tracking-tight text-[#ff006b] sm:text-5xl md:text-6xl"
+            >
+              ¿Tu mascota tiene síntomas?
+            </motion.h1>
 
-          <motion.h1
-            initial={prefersReduced ? {} : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-5 text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl"
-          >
-            ¿Tu mascota tiene síntomas?
-          </motion.h1>
+            <motion.p
+              initial={prefersReduced ? {} : { opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mb-4 text-xl font-bold text-[#2d0057]"
+            >
+              Atención veterinaria hoy en Lindavista
+            </motion.p>
 
-          <motion.p
-            initial={prefersReduced ? {} : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mb-4 text-xl font-bold text-white/90"
-          >
-            Atención veterinaria hoy en Lindavista
-          </motion.p>
+            <motion.p
+              initial={prefersReduced ? {} : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="mb-10 text-[#555]"
+            >
+              Revisión completa, estudios y seguimiento personalizado
+            </motion.p>
 
-          <motion.p
-            initial={prefersReduced ? {} : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="mb-10 text-white/60"
-          >
-            Revisión completa, estudios y seguimiento personalizado
-          </motion.p>
+            <motion.div
+              initial={prefersReduced ? {} : { opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="mb-10 inline-flex items-baseline gap-2 rounded-3xl bg-[#f9fafb] px-8 py-4"
+            >
+              <span className="text-sm text-[#555]">Consulta desde</span>
+              <span className="text-4xl font-extrabold text-[#ff006b]">$250</span>
+            </motion.div>
 
-          {/* Price */}
+            <motion.div
+              initial={prefersReduced ? {} : { opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+            >
+              <button
+                onClick={() => setShowAgenda(true)}
+                className="inline-flex items-center gap-3 rounded-2xl bg-[#ff006b] px-10 py-5 text-lg font-bold text-white shadow-lg shadow-[#ff006b]/20 transition-all hover:bg-[#e6005f] hover:shadow-xl active:scale-95"
+              >
+                Agendar consulta ahora
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Image */}
           <motion.div
             initial={prefersReduced ? {} : { opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            className="mb-10 inline-flex items-baseline gap-2 rounded-3xl border border-white/10 bg-white/5 px-8 py-4 backdrop-blur-sm"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="hidden lg:block"
           >
-            <span className="text-sm text-white/60">Consulta desde</span>
-            <span className="text-4xl font-extrabold text-white">$250</span>
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div
-            initial={prefersReduced ? {} : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.9 }}
-          >
-            <button
-              onClick={() => setShowAgenda(true)}
-              className="animate-pulse-soft inline-flex items-center gap-3 rounded-2xl bg-[#8b00fb] px-10 py-5 text-lg font-bold text-white shadow-xl shadow-[#8b00fb]/30 transition-all hover:bg-[#7400d4] hover:shadow-2xl active:scale-95"
-            >
-              📋 Agendar consulta ahora
-            </button>
+            <img
+              src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=800&q=80"
+              alt="Mascota siendo revisada con cariño"
+              className="rounded-2xl shadow-xl"
+              loading="eager"
+            />
           </motion.div>
         </div>
       </section>
@@ -147,7 +155,7 @@ export default function LandingConsultaClient() {
           <ScrollReveal delay={0.3} className="mt-10 text-center">
             <button
               onClick={() => setShowAgenda(true)}
-              className="inline-flex items-center gap-2 rounded-2xl bg-[#8b00fb] px-9 py-4 font-bold text-white shadow-xl shadow-[#8b00fb]/20 transition-all hover:bg-[#7400d4] active:scale-95"
+              className="inline-flex items-center gap-2 rounded-2xl bg-[#ff006b] px-9 py-4 font-bold text-white shadow-xl shadow-[#ff006b]/20 transition-all hover:bg-[#e6005f] active:scale-95"
             >
               📋 Ver disponibilidad de agenda
             </button>

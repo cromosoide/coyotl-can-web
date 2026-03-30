@@ -23,7 +23,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Track active section
   useEffect(() => {
     const sections = NAV_LINKS.map((l) => l.href.replace("#", ""));
     const observer = new IntersectionObserver(
@@ -48,17 +47,15 @@ export default function Navbar() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed left-0 right-0 top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "border-b border-white/10 bg-[#ff006b]/90 shadow-lg backdrop-blur-xl"
-          : "bg-transparent"
+          ? "border-b border-gray-200 bg-white/90 shadow-sm backdrop-blur-xl"
+          : "bg-white"
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <a href="#" className="text-xl font-extrabold text-white">
+        <a href="#" className="text-xl font-extrabold text-[#ff006b]">
           Coyotl Can
         </a>
 
-        {/* Desktop links */}
         <div className="hidden items-center gap-1 md:flex">
           {NAV_LINKS.map((link) => (
             <a
@@ -66,8 +63,8 @@ export default function Navbar() {
               href={link.href}
               className={`relative rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
                 activeSection === link.href.replace("#", "")
-                  ? "text-white"
-                  : "text-white/70 hover:text-white"
+                  ? "text-[#ff006b]"
+                  : "text-[#333] hover:text-[#ff006b]"
               }`}
             >
               {link.label}
@@ -82,29 +79,19 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
         <a
-          href={CONTACTO.whatsappMensaje}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/landing/consulta"
           className="hidden items-center gap-2 rounded-xl bg-[#8b00fb] px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:bg-[#7400d4] hover:shadow-lg active:scale-95 md:inline-flex"
         >
           Agendar cita
         </a>
 
-        {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-white md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-lg text-[#333] md:hidden"
           aria-label="Menú"
         >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            className="h-6 w-6"
-          >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6">
             {mobileOpen ? (
               <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" />
             ) : (
@@ -114,27 +101,24 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="border-t border-white/10 bg-[#ff006b]/95 px-4 pb-4 backdrop-blur-xl md:hidden"
+          className="border-t border-gray-200 bg-white px-4 pb-4 md:hidden"
         >
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block rounded-lg px-4 py-3 text-sm font-semibold text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+              className="block rounded-lg px-4 py-3 text-sm font-semibold text-[#333] transition-colors hover:bg-[#fff0f7] hover:text-[#ff006b]"
             >
               {link.label}
             </a>
           ))}
           <a
-            href={CONTACTO.whatsappMensaje}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/landing/consulta"
             className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-[#8b00fb] px-5 py-3 text-sm font-bold text-white"
           >
             Agendar cita

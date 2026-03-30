@@ -5,7 +5,7 @@ import ScrollReveal from "./animations/ScrollReveal";
 
 export default function MapaContacto() {
   return (
-    <section id="contacto" className="bg-white py-20 sm:py-28 lg:py-32">
+    <section id="contacto" className="bg-[#f9fafb] py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="mb-16 text-center">
           <span className="mb-3 inline-block rounded-full bg-[#ff006b]/10 px-5 py-2 text-sm font-bold text-[#ff006b]">

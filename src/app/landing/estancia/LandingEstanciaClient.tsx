@@ -58,7 +58,7 @@ export default function LandingEstanciaClient() {
           >
             <button
               onClick={() => setShowAgenda(true)}
-              className="inline-flex items-center gap-3 rounded-2xl bg-white px-10 py-5 text-lg font-bold text-[#8b00fb] shadow-xl transition-all hover:bg-white/90 hover:shadow-2xl active:scale-95"
+              className="inline-flex items-center gap-3 rounded-2xl bg-[#ffab00] px-10 py-5 text-lg font-bold text-white shadow-xl transition-all hover:bg-[#e69a00] hover:shadow-2xl active:scale-95"
             >
               📋 Reservar Estancia
             </button>
@@ -120,7 +120,7 @@ export default function LandingEstanciaClient() {
           <ScrollReveal delay={0.3}>
             <button
               onClick={() => setShowAgenda(true)}
-              className="inline-flex items-center gap-2 rounded-2xl bg-[#8b00fb] px-9 py-4 font-bold text-white shadow-xl shadow-[#8b00fb]/20 transition-all hover:bg-[#7400d4] active:scale-95"
+              className="inline-flex items-center gap-2 rounded-2xl bg-[#ff006b] px-9 py-4 font-bold text-white shadow-xl shadow-[#ff006b]/20 transition-all hover:bg-[#e6005f] active:scale-95"
             >
               📋 Reservar ahora
             </button>

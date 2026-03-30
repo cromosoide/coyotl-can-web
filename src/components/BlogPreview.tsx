@@ -32,7 +32,7 @@ export default function BlogPreview() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="bg-[#fafafa] py-20 sm:py-28 lg:py-32">
+    <section className="bg-[#f9fafb] py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="mb-16 text-center">
           <span className="mb-3 inline-block rounded-full bg-[#4bbb00]/10 px-5 py-2 text-sm font-bold text-[#4bbb00]">
