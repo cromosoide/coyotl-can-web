@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { CONTACTO } from "@/lib/constants";
 import ScrollReveal from "./animations/ScrollReveal";
 
 const features = [
@@ -21,58 +20,72 @@ export default function EstanciaDestacada() {
       {/* Decorative circles */}
       <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/5" />
       <div className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-white/5" />
-      <div className="absolute right-1/3 top-1/2 h-40 w-40 rounded-full bg-[#ff006b]/10" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <ScrollReveal>
-            <span className="mb-4 inline-block rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-bold text-white/90 backdrop-blur-sm">
-              Estancia Coyotl
-            </span>
-          </ScrollReveal>
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          {/* Text */}
+          <div>
+            <ScrollReveal>
+              <span className="mb-4 inline-block rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-bold text-white/90 backdrop-blur-sm">
+                Estancia Coyotl
+              </span>
+            </ScrollReveal>
 
-          <ScrollReveal delay={0.1}>
-            <h2 className="mb-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
-              Con profesionales que los cuidan como propios
-            </h2>
-          </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <h2 className="mb-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
+                Con profesionales que los cuidan como propios
+              </h2>
+            </ScrollReveal>
 
-          <ScrollReveal delay={0.2}>
-            <p className="mb-12 text-lg text-white/70">
-              Mientras tú descansas o viajas, tu mascota está en las mejores manos.
-            </p>
-          </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <p className="mb-10 text-lg text-white/70">
+                Mientras tú descansas o viajas, tu mascota está en las mejores manos.
+              </p>
+            </ScrollReveal>
 
-          {/* Features from sides */}
-          <div className="mb-12 flex flex-col items-center gap-5 sm:flex-row sm:justify-center sm:gap-10">
-            {features.map((f, i) => (
-              <motion.div
-                key={f.texto}
-                initial={prefersReduced ? {} : {
-                  opacity: 0,
-                  x: i === 0 ? -40 : i === 2 ? 40 : 0,
-                  y: i === 1 ? 20 : 0,
-                }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 + i * 0.15 }}
-                className="flex items-center gap-3 rounded-2xl bg-white/10 px-5 py-3 backdrop-blur-sm"
+            {/* Features */}
+            <div className="mb-10 flex flex-col gap-4">
+              {features.map((f, i) => (
+                <motion.div
+                  key={f.texto}
+                  initial={prefersReduced ? {} : { opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 + i * 0.12 }}
+                  className="flex items-center gap-3 rounded-2xl bg-white/10 px-5 py-3 backdrop-blur-sm"
+                >
+                  <span className="text-2xl">{f.icono}</span>
+                  <span className="text-sm font-semibold text-white">{f.texto}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* CTA — naranja sobre fondo violeta */}
+            <ScrollReveal delay={0.5}>
+              <a
+                href="/landing/estancia"
+                className="inline-flex items-center gap-3 rounded-2xl bg-[#ffab00] px-9 py-4 text-base font-bold text-white shadow-xl transition-all hover:bg-[#e69a00] hover:shadow-2xl active:scale-95 sm:text-lg"
               >
-                <span className="text-2xl">{f.icono}</span>
-                <span className="text-sm font-semibold text-white">{f.texto}</span>
-              </motion.div>
-            ))}
+                Reservar Estancia
+              </a>
+            </ScrollReveal>
           </div>
 
-          {/* CTA — naranja sobre fondo violeta */}
-          <ScrollReveal delay={0.4}>
-            <a
-              href="/landing/estancia"
-              className="inline-flex items-center gap-3 rounded-2xl bg-[#ffab00] px-9 py-4 text-base font-bold text-white shadow-xl transition-all hover:bg-[#e69a00] hover:shadow-2xl active:scale-95 sm:text-lg"
-            >
-              Reservar Estancia
-            </a>
-          </ScrollReveal>
+          {/* Image */}
+          <motion.div
+            initial={prefersReduced ? {} : { opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="hidden lg:block"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=700&q=80"
+              alt="Mascota relajada y feliz en un espacio cómodo"
+              className="rounded-3xl border-4 border-white/10 shadow-2xl"
+              loading="lazy"
+            />
+          </motion.div>
         </div>
       </div>
     </section>
