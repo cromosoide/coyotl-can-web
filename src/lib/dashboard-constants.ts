@@ -78,7 +78,7 @@ export const COLOR_STOCK = {
   agotado: "#ff4444",
 };
 
-export const WHATSAPP_BASE = "https://wa.me/5215634461745";
+export const WHATSAPP_BASE = "https://wa.me/525634461745";
 
 export function whatsappUrl(mensaje: string): string {
   return `${WHATSAPP_BASE}?text=${encodeURIComponent(mensaje)}`;

@@ -22,7 +22,7 @@ export default function NumeroStats() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, i) => (
             <FadeIn key={stat.label} delay={i * 0.1}>
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/10">
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center transition-all hover:border-white/20 hover:bg-white/10">
                 <AnimatedCounter target={stat.target} suffix={stat.suffix} className="block text-5xl font-extrabold text-white sm:text-6xl" duration={2.5} />
                 <div className="mx-auto my-4 h-1 w-12 rounded-full" style={{ backgroundColor: stat.color }} />
                 <p className="text-base font-bold text-white">{stat.label}</p>

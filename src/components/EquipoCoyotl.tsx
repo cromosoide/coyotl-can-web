@@ -43,7 +43,7 @@ export default function EquipoCoyotl() {
           <div className="rounded-2xl border border-[#ff006b]/10 bg-white p-8 shadow-sm">
             <p className="mb-2 text-lg font-extrabold text-[#2d0057]">¿No encuentras lo que buscas?</p>
             <p className="mb-5 text-sm text-[#555]">Nuestro equipo puede orientarte sobre el servicio que tu mascota necesita.</p>
-            <a href="https://wa.me/525534461745?text=Hola%2C%20tengo%20una%20duda%20sobre%20los%20servicios%20de%20Coyotl%20Can" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-[#25D366] px-6 py-3 text-sm font-bold text-white transition-all hover:bg-[#20b858] active:scale-95">
+            <a href="https://wa.me/525634461745?text=Hola%2C%20tengo%20una%20duda%20sobre%20los%20servicios%20de%20Coyotl%20Can" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-[#25D366] px-6 py-3 text-sm font-bold text-white transition-all hover:bg-[#20b858] active:scale-95">
               Contáctanos por WhatsApp
             </a>
           </div>

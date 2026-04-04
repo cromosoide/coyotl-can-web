@@ -56,7 +56,7 @@ const jsonLdVet = {
   description:
     "Clínica veterinaria integral en Lindavista, CDMX. Consulta, intervención de mínima invasión, estancia, estética y vacunación.",
   url: "https://coyotl-can.vercel.app",
-  telephone: "+525534461745",
+  telephone: "+525634461745",
   email: "hola@coyotlcan.mx",
   address: {
     "@type": "PostalAddress",

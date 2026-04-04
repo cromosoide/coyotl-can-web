@@ -84,7 +84,7 @@ export default function Hero() {
                 className="h-[360px] w-full object-cover sm:h-[420px] lg:h-[480px]"
                 priority
               />
-              <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/90 p-4 shadow-lg backdrop-blur-sm sm:bottom-5 sm:left-5 sm:right-5 sm:p-5">
+              <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white p-4 shadow-lg sm:bottom-5 sm:left-5 sm:right-5 sm:p-5">
                 <div className="flex items-center gap-3">
                   <img src="/icon-consulta.svg" alt="" className="h-10 w-10 rounded-xl bg-[#ff006b] p-2" />
                   <div>

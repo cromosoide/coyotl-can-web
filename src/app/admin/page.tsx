@@ -226,7 +226,7 @@ function TomorrowReminders() {
               <p className="text-xs text-[#555]">{r.service}</p>
             </div>
             <a
-              href={`https://wa.me/5215634461745?text=${encodeURIComponent(msg)}`}
+              href={`https://wa.me/525634461745?text=${encodeURIComponent(msg)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl bg-[#25D366] px-4 py-2 text-xs font-bold text-white"

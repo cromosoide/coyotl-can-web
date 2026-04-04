@@ -165,7 +165,7 @@ export default function AgendaModal({ open, onClose, defaultService }: AgendaMod
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-[#2d0057]/40 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 bg-[#2d0057]/70" onClick={onClose} />
       <div className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
         {/* Close button */}
         <button onClick={onClose} className="absolute right-4 top-4 rounded-lg p-1 text-[#555] hover:bg-gray-100">

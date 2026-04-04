@@ -2,8 +2,8 @@ export const CONTACTO = {
   telefono: "55 5754 5221",
   telefonoLink: "tel:+525557545221",
   whatsapp: "56 3446 1745",
-  whatsappLink: "https://wa.me/5215634461745",
-  whatsappMensaje: "https://wa.me/5215634461745?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita",
+  whatsappLink: "https://wa.me/525634461745",
+  whatsappMensaje: "https://wa.me/525634461745?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita",
   email: "hola@coyotlcan.mx",
   direccion: "Irapuato 11, Col. Lindavista, Alcaldía Gustavo A. Madero, CDMX",
   direccionCorta: "Irapuato 11, Lindavista, CDMX",
@@ -57,7 +57,7 @@ export const SERVICIOS = [
     iconKey: "estetica",
     imagen: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600&q=80",
     ctaText: "Agendar Estética",
-    ctaHref: "https://wa.me/525534461745?text=Hola%2C%20quisiera%20agendar%20un%20servicio%20de%20Est%C3%A9tica%20Coyotl",
+    ctaHref: "https://wa.me/525634461745?text=Hola%2C%20quisiera%20agendar%20un%20servicio%20de%20Est%C3%A9tica%20Coyotl",
     ctaExternal: true,
   },
   {
@@ -71,7 +71,7 @@ export const SERVICIOS = [
     iconKey: "vacunacion",
     imagen: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80",
     ctaText: "Agendar Vacunación",
-    ctaHref: "https://wa.me/525534461745?text=Hola%2C%20quisiera%20agendar%20una%20cita%20de%20Vacunaci%C3%B3n",
+    ctaHref: "https://wa.me/525634461745?text=Hola%2C%20quisiera%20agendar%20una%20cita%20de%20Vacunaci%C3%B3n",
     ctaExternal: true,
   },
 ] as const;

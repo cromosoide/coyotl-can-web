@@ -21,7 +21,7 @@ export default function Modal({ open, onClose, title, children, wide }: ModalPro
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-[#2d0057]/40 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 bg-[#2d0057]/70" onClick={onClose} />
       <div className={`relative max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl ${wide ? "w-full max-w-3xl" : "w-full max-w-lg"}`}>
         <div className="mb-5 flex items-center justify-between">
           <h2 className="text-lg font-extrabold text-[#2d0057]">{title}</h2>

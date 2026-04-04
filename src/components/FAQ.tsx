@@ -8,7 +8,7 @@ interface FAQItem {
   a: ReactNode;
 }
 
-const WA_LINK = "https://wa.me/525534461745";
+const WA_LINK = "https://wa.me/525634461745";
 
 const FAQS: FAQItem[] = [
   {
