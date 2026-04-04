@@ -1,31 +1,24 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { FEATURES } from "@/lib/constants";
+import FadeIn from "./animations/FadeIn";
 
 export default function FeatureBar() {
-  const prefersReduced = useReducedMotion();
-
   return (
     <section className="border-b border-[#ff006b]/10 bg-white">
       <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-[#ff006b]/10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
         {FEATURES.map((feature, i) => (
-          <motion.div
-            key={feature.titulo}
-            initial={prefersReduced ? {} : { opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.1 }}
-            className="flex items-center gap-4 px-6 py-6 sm:justify-center"
-          >
-            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#ff006b]/10 text-2xl">
-              {feature.icono}
-            </span>
-            <div>
-              <p className="font-bold text-[#2d0057]">{feature.titulo}</p>
-              <p className="text-sm text-[#555]">{feature.descripcion}</p>
+          <FadeIn key={feature.titulo} delay={i * 0.1}>
+            <div className="flex items-center gap-4 px-6 py-6 sm:justify-center">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#ff006b]/10 text-2xl">
+                {feature.icono}
+              </span>
+              <div>
+                <p className="font-bold text-[#2d0057]">{feature.titulo}</p>
+                <p className="text-sm text-[#555]">{feature.descripcion}</p>
+              </div>
             </div>
-          </motion.div>
+          </FadeIn>
         ))}
       </div>
     </section>

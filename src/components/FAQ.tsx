@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import ScrollReveal from "./animations/ScrollReveal";
+import FadeIn from "./animations/FadeIn";
 
 interface FAQItem {
   q: string;
@@ -127,12 +126,11 @@ const FAQS: FAQItem[] = [
 
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
-  const prefersReduced = useReducedMotion();
 
   return (
     <section id="faq" className="bg-white py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <ScrollReveal className="mb-12 text-center">
+        <FadeIn className="mb-12 text-center">
           <span className="mb-3 inline-block rounded-full bg-[#fff0f7] px-5 py-2 text-sm font-bold text-[#ff006b]">
             FAQ
           </span>
@@ -142,41 +140,31 @@ export default function FAQ() {
           <p className="text-[#555]">
             Todo lo que necesitas saber sobre nuestros servicios veterinarios en la CDMX
           </p>
-        </ScrollReveal>
+        </FadeIn>
 
         <div className="space-y-3">
           {FAQS.map((faq, i) => (
-            <ScrollReveal key={i} delay={i * 0.03}>
+            <FadeIn key={i} delay={i * 0.03}>
               <div className="rounded-2xl border border-gray-200 bg-white transition-shadow hover:shadow-sm">
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
                   className="flex w-full items-center justify-between px-6 py-5 text-left"
                 >
                   <span className="pr-4 text-sm font-bold text-[#2d0057] sm:text-base">{faq.q}</span>
-                  <span className={`shrink-0 text-lg text-[#ff006b] transition-transform ${open === i ? "rotate-45" : ""}`}>
+                  <span className={`shrink-0 text-lg text-[#ff006b] transition-transform duration-200 ${open === i ? "rotate-45" : ""}`}>
                     +
                   </span>
                 </button>
-                <AnimatePresence>
-                  {open === i && (
-                    <motion.div
-                      initial={prefersReduced ? {} : { height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={prefersReduced ? {} : { height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-5 text-sm leading-relaxed text-[#555]">{faq.a}</div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {open === i && (
+                  <div className="px-6 pb-5 text-sm leading-relaxed text-[#555]">{faq.a}</div>
+                )}
               </div>
-            </ScrollReveal>
+            </FadeIn>
           ))}
         </div>
 
         {/* CTA after FAQ */}
-        <ScrollReveal className="mt-10 text-center">
+        <FadeIn className="mt-10 text-center">
           <p className="mb-4 text-sm text-[#555]">¿No encuentras lo que buscas?</p>
           <a
             href={WA_LINK}
@@ -189,7 +177,7 @@ export default function FAQ() {
             </svg>
             Escríbenos por WhatsApp
           </a>
-        </ScrollReveal>
+        </FadeIn>
       </div>
     </section>
   );

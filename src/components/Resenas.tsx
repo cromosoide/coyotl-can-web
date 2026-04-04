@@ -1,28 +1,21 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { REVIEWS } from "@/lib/constants";
 import { supabase } from "@/lib/supabase";
-import ScrollReveal from "./animations/ScrollReveal";
+import FadeIn from "./animations/FadeIn";
 
-interface ResenasProps {
-  limit?: number;
-}
-
+interface ResenasProps { limit?: number; }
 type ReviewData = { nombre: string; mascota: string; texto: string; rating: number; avatar?: string };
 
 export default function Resenas({ limit }: ResenasProps) {
   const [dbReviews, setDbReviews] = useState<ReviewData[] | null>(null);
-  const prefersReduced = useReducedMotion();
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     supabase.from("reviews").select("*").eq("visible", true).order("created_at", { ascending: false }).limit(10)
       .then(({ data }) => {
-        if (data && data.length > 0) {
-          setDbReviews(data.map((r: any) => ({ nombre: r.name, mascota: "", texto: r.text, rating: r.rating })));
-        }
+        if (data && data.length > 0) setDbReviews(data.map((r: any) => ({ nombre: r.name, mascota: "", texto: r.text, rating: r.rating })));
       });
   }, []);
 
@@ -30,36 +23,19 @@ export default function Resenas({ limit }: ResenasProps) {
   const allReviews = dbReviews && dbReviews.length > 0 ? dbReviews : fallback;
   const reviews = limit ? allReviews.slice(0, limit) : allReviews;
 
-  const next = useCallback(() => {
-    setCurrent((c) => (c + 1) % reviews.length);
-  }, [reviews.length]);
-
   // Autoplay
   useEffect(() => {
-    if (prefersReduced) return;
-    const interval = setInterval(next, 5000);
+    const interval = setInterval(() => setCurrent((c) => (c + 1) % reviews.length), 5000);
     return () => clearInterval(interval);
-  }, [next, prefersReduced]);
+  }, [reviews.length]);
 
   return (
     <section id="resenas" className="bg-white py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <ScrollReveal className="mb-16 text-center">
-          <span className="mb-3 inline-block rounded-full bg-[#ff006b]/10 px-5 py-2 text-sm font-bold text-[#ff006b]">
-            Reseñas
-          </span>
-          <h2 className="mb-5 text-3xl font-extrabold tracking-tight text-[#2d0057] sm:text-4xl md:text-5xl">
-            Lo que dicen nuestras familias
-          </h2>
-
-          {/* Google badge */}
+        <FadeIn className="mb-16 text-center">
+          <span className="mb-3 inline-block rounded-full bg-[#ff006b]/10 px-5 py-2 text-sm font-bold text-[#ff006b]">Reseñas</span>
+          <h2 className="mb-5 text-3xl font-extrabold tracking-tight text-[#2d0057] sm:text-4xl md:text-5xl">Lo que dicen nuestras familias</h2>
           <div className="inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-5 py-2.5 shadow-sm">
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
-              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4" />
-              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
-              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
-              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
-            </svg>
             <span className="text-base font-extrabold text-[#2d0057]">5.0</span>
             <div className="flex text-[#ffab00]">
               {[...Array(5)].map((_, i) => (
@@ -68,44 +44,25 @@ export default function Resenas({ limit }: ResenasProps) {
                 </svg>
               ))}
             </div>
-            <span className="text-sm text-[#555]">8 reseñas</span>
+            <span className="text-sm text-[#555]">Google</span>
           </div>
-        </ScrollReveal>
+        </FadeIn>
 
-        {/* Desktop: grid */}
+        {/* Desktop grid */}
         <div className="hidden gap-8 sm:grid sm:grid-cols-3">
           {reviews.map((review, i) => (
-            <ScrollReveal key={review.nombre} delay={i * 0.12}>
+            <FadeIn key={review.nombre} delay={i * 0.1}>
               <ReviewCard {...review} />
-            </ScrollReveal>
+            </FadeIn>
           ))}
         </div>
 
-        {/* Mobile: animated carousel */}
+        {/* Mobile carousel */}
         <div className="sm:hidden">
-          <div className="relative min-h-[200px]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={current}
-                initial={prefersReduced ? {} : { opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={prefersReduced ? {} : { opacity: 0, x: -30 }}
-                transition={{ duration: 0.3 }}
-              >
-                <ReviewCard {...reviews[current]} />
-              </motion.div>
-            </AnimatePresence>
-          </div>
+          <ReviewCard {...reviews[current]} />
           <div className="mt-6 flex justify-center gap-2.5">
             {reviews.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`h-2.5 rounded-full transition-all ${
-                  i === current ? "w-8 bg-[#ff006b]" : "w-2.5 bg-gray-300"
-                }`}
-                aria-label={`Ver reseña ${i + 1}`}
-              />
+              <button key={i} onClick={() => setCurrent(i)} className={`h-2.5 rounded-full transition-all ${i === current ? "w-8 bg-[#ff006b]" : "w-2.5 bg-gray-300"}`} aria-label={`Reseña ${i + 1}`} />
             ))}
           </div>
         </div>
@@ -114,19 +71,7 @@ export default function Resenas({ limit }: ResenasProps) {
   );
 }
 
-function ReviewCard({
-  nombre,
-  mascota,
-  texto,
-  rating,
-  avatar,
-}: {
-  nombre: string;
-  mascota: string;
-  texto: string;
-  rating: number;
-  avatar?: string;
-}) {
+function ReviewCard({ nombre, mascota, texto, rating, avatar }: ReviewData) {
   return (
     <div className="rounded-3xl border border-[#ff006b]/10 bg-[#fafafa] p-7 transition-shadow hover:shadow-lg hover:shadow-[#ff006b]/5">
       <div className="mb-4 flex text-[#ffab00]">
@@ -138,17 +83,10 @@ function ReviewCard({
       </div>
       <p className="mb-5 text-sm leading-relaxed text-[#555]">&ldquo;{texto}&rdquo;</p>
       <div className="flex items-center gap-3 border-t border-gray-200 pt-4">
-        {avatar && (
-          <img
-            src={avatar}
-            alt={mascota}
-            className="h-10 w-10 rounded-full object-cover"
-            loading="lazy"
-          />
-        )}
+        {avatar && <img src={avatar} alt={mascota} className="h-10 w-10 rounded-full object-cover" loading="lazy" />}
         <div>
           <p className="font-bold text-[#2d0057]">{nombre}</p>
-          <p className="text-xs text-[#555]">{mascota}</p>
+          {mascota && <p className="text-xs text-[#555]">{mascota}</p>}
         </div>
       </div>
     </div>

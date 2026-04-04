@@ -34,12 +34,67 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Animated gradient for Estancia section */
+/* === ANIMATION SYSTEM (CSS only, no Framer Motion) === */
+
+/* Fade in from below */
+.anim-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.anim-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Fade in from left */
+.anim-hidden-left {
+  opacity: 0;
+  transform: translateX(-24px);
+}
+.anim-visible-left {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Fade in from right */
+.anim-hidden-right {
+  opacity: 0;
+  transform: translateX(24px);
+}
+.anim-visible-right {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Scale in */
+.anim-hidden-scale {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.anim-visible-scale {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Stagger delays */
+.anim-delay-1 { transition-delay: 0.1s; }
+.anim-delay-2 { transition-delay: 0.2s; }
+.anim-delay-3 { transition-delay: 0.3s; }
+.anim-delay-4 { transition-delay: 0.4s; }
+.anim-delay-5 { transition-delay: 0.5s; }
+.anim-delay-6 { transition-delay: 0.6s; }
+.anim-delay-7 { transition-delay: 0.7s; }
+.anim-delay-8 { transition-delay: 0.8s; }
+
+/* Gradient shift for Estancia */
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
-
 .animate-gradient-shift {
   background-size: 200% 200%;
   animation: gradientShift 8s ease infinite;
@@ -47,12 +102,20 @@ html {
 
 /* Pulse for CTAs */
 @keyframes pulse-soft {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(128, 2, 242, 0.4); }
-  50% { box-shadow: 0 0 0 12px rgba(128, 2, 242, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 0, 107, 0.3); }
+  50% { box-shadow: 0 0 0 10px rgba(255, 0, 107, 0); }
 }
-
 .animate-pulse-soft {
   animation: pulse-soft 2.5s ease-in-out infinite;
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(255, 0, 107, 0.1);
 }
 
 /* Respect reduced motion */
@@ -63,4 +126,8 @@ html {
     transition-duration: 0.01ms !important;
   }
   html { scroll-behavior: auto; }
+  .anim-hidden, .anim-hidden-left, .anim-hidden-right, .anim-hidden-scale {
+    opacity: 1;
+    transform: none;
+  }
 }
