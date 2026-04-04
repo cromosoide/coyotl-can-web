@@ -1,7 +1,6 @@
 "use client";
 
-import { type ReactNode } from "react";
-import { useInView } from "./useInView";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 
 interface FadeInProps {
   children: ReactNode;
@@ -10,23 +9,12 @@ interface FadeInProps {
   direction?: "up" | "left" | "right" | "scale";
 }
 
-export default function FadeIn({ children, className = "", delay = 0, direction = "up" }: FadeInProps) {
-  const { ref, inView } = useInView();
-
-  const hiddenClass = direction === "left" ? "anim-hidden-left"
-    : direction === "right" ? "anim-hidden-right"
-    : direction === "scale" ? "anim-hidden-scale"
-    : "anim-hidden";
-
-  const visibleClass = direction === "left" ? "anim-visible-left"
-    : direction === "right" ? "anim-visible-right"
-    : direction === "scale" ? "anim-visible-scale"
-    : "anim-visible";
-
-  const delayClass = delay > 0 ? `anim-delay-${Math.min(Math.round(delay * 10), 8)}` : "";
-
+export default function FadeIn({ children, className = "" }: FadeInProps) {
+  // No animations — just render children immediately.
+  // This ensures compatibility with all browsers including Safari iOS 10+.
+  // The content is always visible, never hidden with opacity:0.
   return (
-    <div ref={ref} className={`${inView ? `${visibleClass} ${delayClass}` : hiddenClass} ${className}`}>
+    <div className={className}>
       {children}
     </div>
   );
