@@ -1,6 +1,4 @@
-"use client";
-
-import { type ReactNode, useEffect, useRef, useState } from "react";
+import { type ReactNode } from "react";
 
 interface FadeInProps {
   children: ReactNode;
@@ -10,12 +8,5 @@ interface FadeInProps {
 }
 
 export default function FadeIn({ children, className = "" }: FadeInProps) {
-  // No animations — just render children immediately.
-  // This ensures compatibility with all browsers including Safari iOS 10+.
-  // The content is always visible, never hidden with opacity:0.
-  return (
-    <div className={className}>
-      {children}
-    </div>
-  );
+  return <div className={className}>{children}</div>;
 }
