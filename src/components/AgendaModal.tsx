@@ -1,7 +1,12 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { supabase } from "@/lib/supabase";
+import { useState, useEffect } from "react";
+
+// Lazy import to avoid breaking hydration if supabase fails to init
+async function getSupabaseClient() {
+  const { supabase } = await import("@/lib/supabase");
+  return supabase;
+}
 
 const SERVICIOS_AGENDA = [
   "Consulta General",
@@ -56,14 +61,12 @@ export default function AgendaModal({ open, onClose, defaultService }: AgendaMod
   // Fetch occupied times when date is selected
   useEffect(() => {
     if (!selectedDate) return;
-    supabase
-      .from("appointments")
-      .select("time")
-      .eq("date", selectedDate)
-      .neq("status", "cancelada")
-      .then(({ data }) => {
-        setOccupiedTimes((data || []).map((r: any) => r.time?.slice(0, 5)));
-      });
+    getSupabaseClient().then((sb) =>
+      sb.from("appointments").select("time").eq("date", selectedDate).neq("status", "cancelada")
+        .then(({ data }) => {
+          setOccupiedTimes((data || []).map((r: any) => r.time?.slice(0, 5)));
+        })
+    ).catch(() => {});
   }, [selectedDate]);
 
   // Calendar helpers
@@ -115,16 +118,18 @@ export default function AgendaModal({ open, onClose, defaultService }: AgendaMod
     setSaving(true);
 
     try {
+      const sb = await getSupabaseClient();
+
       // 1. Find or create owner
       let ownerId: string;
       const phoneClean = form.phone.replace(/\D/g, "");
-      const { data: existingOwner } = await supabase
+      const { data: existingOwner } = await sb
         .from("owners").select("id").eq("phone", phoneClean).limit(1).single();
 
       if (existingOwner) {
         ownerId = existingOwner.id;
       } else {
-        const { data: newOwner } = await supabase
+        const { data: newOwner } = await sb
           .from("owners").insert({ name: form.ownerName, phone: phoneClean, email: form.email || null })
           .select("id").single();
         ownerId = newOwner?.id || "";
@@ -132,13 +137,13 @@ export default function AgendaModal({ open, onClose, defaultService }: AgendaMod
 
       // 2. Find or create patient
       let patientId: string;
-      const { data: existingPatient } = await supabase
+      const { data: existingPatient } = await sb
         .from("patients").select("id").eq("owner_id", ownerId).eq("name", form.petName).limit(1).single();
 
       if (existingPatient) {
         patientId = existingPatient.id;
       } else {
-        const { data: newPatient } = await supabase
+        const { data: newPatient } = await sb
           .from("patients").insert({
             name: form.petName, species: form.species, breed: form.breed || null, owner_id: ownerId,
           }).select("id").single();
@@ -146,7 +151,7 @@ export default function AgendaModal({ open, onClose, defaultService }: AgendaMod
       }
 
       // 3. Create appointment
-      await supabase.from("appointments").insert({
+      await sb.from("appointments").insert({
         patient_id: patientId, owner_id: ownerId,
         service: form.service, date: selectedDate, time: selectedTime,
         origin: "Web/Landing", status: "pendiente", notes: form.notes || null,
