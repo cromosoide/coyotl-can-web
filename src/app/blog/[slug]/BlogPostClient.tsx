@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
-import AgendaModal from "@/components/AgendaModal";
 
 interface Post {
   id: string; title: string; slug: string; excerpt: string; content: string;
@@ -16,7 +15,7 @@ export default function BlogPostPage() {
   const slug = params.slug as string;
   const [post, setPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState(true);
-  const [showAgenda, setShowAgenda] = useState(false);
+
 
   useEffect(() => {
     supabase
@@ -112,11 +111,10 @@ export default function BlogPostPage() {
         <div className="mt-12 rounded-2xl bg-[#fff0f7] p-8 text-center">
           <h3 className="mb-3 text-xl font-extrabold text-[#2d0057]">¿Tu mascota necesita atención?</h3>
           <p className="mb-5 text-sm text-[#555]">Agenda tu cita hoy en Coyotl Can. Estamos en Lindavista, CDMX.</p>
-          <button onClick={() => setShowAgenda(true)} className="inline-flex rounded-2xl bg-[#ff006b] px-8 py-3.5 font-bold text-white transition-all hover:bg-[#e6005f]">
+          <a href="https://wa.me/525634461745?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita" target="_blank" rel="noopener noreferrer" className="inline-flex rounded-2xl bg-[#ff006b] px-8 py-3.5 font-bold text-white transition-all hover:bg-[#e6005f]">
             Agendar cita ahora
-          </button>
+          </a>
         </div>
-        <AgendaModal open={showAgenda} onClose={() => setShowAgenda(false)} defaultService="Consulta General" />
 
         {/* Back */}
         <div className="mt-10">
