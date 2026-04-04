@@ -1,11 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { CONTACTO } from "@/lib/constants";
 import AnimatedCounter from "./animations/AnimatedCounter";
 import FadeIn from "./animations/FadeIn";
+import AgendaModal from "./AgendaModal";
 
 const WA_AGENDAR = "https://wa.me/525634461745?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita";
 
 export default function Hero() {
+  const [showAgenda, setShowAgenda] = useState(false);
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#fff0f7] via-white to-[#f9fafb]">
       <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#ff006b]/5" />
@@ -21,25 +27,27 @@ export default function Hero() {
               </div>
             </FadeIn>
 
-            <FadeIn>
+            <FadeIn delay={0.1}>
               <h1 className="mb-5 text-3xl font-extrabold leading-[1.1] tracking-tight text-[#ff006b] sm:text-4xl md:text-5xl lg:text-6xl">
                 Cuidamos a tu familia animal con el trato que merece
               </h1>
             </FadeIn>
 
-            <FadeIn>
+            <FadeIn delay={0.2}>
               <p className="mb-8 max-w-xl text-base text-[#555] sm:text-lg">
                 Atención veterinaria integral con tecnología y empatía. Consulta, estancia, estética y
                 servicios preventivos en un solo lugar.
               </p>
             </FadeIn>
 
-            <FadeIn>
+            <FadeIn delay={0.3}>
               <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
+                {/* Progressive enhancement: <a> fallback + onClick override */}
                 <a
                   href={WA_AGENDAR}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(e) => { e.preventDefault(); setShowAgenda(true); }}
                   className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#ff006b] px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-[#ff006b]/20 transition-all hover:bg-[#e6005f] hover:shadow-xl active:scale-95"
                 >
                   Agendar cita
@@ -56,7 +64,7 @@ export default function Hero() {
               </div>
             </FadeIn>
 
-            <FadeIn>
+            <FadeIn delay={0.4}>
               <div className="flex flex-wrap items-center gap-6">
                 <div className="flex items-center gap-2">
                   <AnimatedCounter target={15} suffix="+" className="text-2xl font-extrabold text-[#ff006b] sm:text-3xl" />
@@ -71,22 +79,23 @@ export default function Hero() {
             </FadeIn>
           </div>
 
-          <FadeIn direction="scale" className="hidden lg:block">
+          {/* Hero image — VISIBLE on ALL devices */}
+          <FadeIn direction="scale" className="mt-8 lg:mt-0">
             <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-[#ff006b]/10">
               <Image
                 src="/coyotl-hero.png"
-                alt="Mascota feliz en Coyotl Can clínica veterinaria Lindavista"
+                alt="Mascota feliz en Coyotl Can clínica veterinaria Lindavista CDMX"
                 width={600}
                 height={480}
-                className="h-[360px] w-full object-cover sm:h-[420px] lg:h-[480px]"
+                className="h-[280px] w-full object-cover sm:h-[360px] lg:h-[480px]"
                 priority
               />
-              <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white p-4 shadow-lg sm:bottom-5 sm:left-5 sm:right-5 sm:p-5">
+              <div className="absolute bottom-3 left-3 right-3 rounded-2xl bg-white p-3 shadow-lg sm:bottom-5 sm:left-5 sm:right-5 sm:p-5">
                 <div className="flex items-center gap-3">
-                  <img src="/icon-consulta.svg" alt="" className="h-10 w-10 rounded-xl bg-[#ff006b] p-2" />
+                  <img src="/icon-consulta.svg" alt="" className="h-8 w-8 rounded-lg bg-[#ff006b] p-1.5 sm:h-10 sm:w-10 sm:rounded-xl sm:p-2" />
                   <div>
-                    <p className="text-sm font-extrabold text-[#2d0057]">Clínica de Referencia Lindavista</p>
-                    <p className="text-xs text-[#555]">Atención integral · Medicina con alma</p>
+                    <p className="text-xs font-extrabold text-[#2d0057] sm:text-sm">Clínica de Referencia Lindavista</p>
+                    <p className="text-[10px] text-[#555] sm:text-xs">Atención integral · Medicina con alma</p>
                   </div>
                 </div>
               </div>
@@ -94,6 +103,8 @@ export default function Hero() {
           </FadeIn>
         </div>
       </div>
+
+      <AgendaModal open={showAgenda} onClose={() => setShowAgenda(false)} defaultService="Consulta General" />
     </section>
   );
 }
