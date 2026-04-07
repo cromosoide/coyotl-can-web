@@ -1,25 +1,9 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
+import { getRecentPosts } from "@/lib/blog-posts";
 import FadeIn from "./animations/FadeIn";
 
-interface Post { id: string; title: string; slug: string; excerpt: string; image_url: string; pillar: string; published_at: string; }
-
-const FALLBACK: Post[] = [
-  { id: "1", slug: "cuando-vacunar-cachorro", title: "¿Cuándo vacunar a tu cachorro? Guía completa", excerpt: "Conoce el esquema de vacunación ideal para proteger a tu cachorro.", pillar: "P1 Educativo", image_url: "https://images.unsplash.com/photo-1587764379873-97837921fd44?w=600&q=80", published_at: "" },
-  { id: "2", slug: "cuidado-dental-mascotas", title: "¿Por qué es importante la limpieza dental?", excerpt: "El cuidado dental previene enfermedades y mejora la calidad de vida.", pillar: "P2 Tips", image_url: "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?w=600&q=80", published_at: "" },
-  { id: "3", slug: "cuidados-despues-intervencion", title: "Cuidados post-intervención de mínima invasión", excerpt: "Tu mascota se recupera más rápido con estos cuidados esenciales.", pillar: "P1 Educativo", image_url: "https://images.unsplash.com/photo-1544568100-847a948585b9?w=600&q=80", published_at: "" },
-];
-
 export default function BlogPreview() {
-  const [posts, setPosts] = useState<Post[]>(FALLBACK);
-
-  useEffect(() => {
-    supabase.from("posts").select("id, title, slug, excerpt, image_url, pillar, published_at").eq("status", "published").order("published_at", { ascending: false }).limit(3)
-      .then(({ data }) => { if (data && data.length > 0) setPosts(data as Post[]); });
-  }, []);
+  const posts = getRecentPosts(3);
 
   return (
     <section className="bg-[#f9fafb] py-20 sm:py-28 lg:py-32">
@@ -30,17 +14,13 @@ export default function BlogPreview() {
         </FadeIn>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, i) => (
-            <FadeIn key={post.id} delay={i * 0.1}>
+            <FadeIn key={post.slug} delay={i * 0.1}>
               <Link href={`/blog/${post.slug}`} className="group block overflow-hidden rounded-3xl border border-[#ff006b]/10 bg-white shadow-sm transition-shadow hover:shadow-lg">
                 <div className="relative h-52 overflow-hidden">
-                  {post.image_url ? (
-                    <img src={post.image_url} alt={`${post.title} — Coyotl Can veterinaria Lindavista`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  ) : (
-                    <div className="flex h-full items-center justify-center bg-[#ff006b]/5"><span className="text-5xl">🐾</span></div>
-                  )}
+                  <img src={post.image} alt={`${post.title} — Coyotl Can veterinaria Lindavista`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                 </div>
                 <div className="p-6">
-                  {post.pillar && <span className="mb-3 inline-block rounded-full bg-[#4bbb00]/10 px-4 py-1 text-xs font-bold text-[#4bbb00]">{post.pillar}</span>}
+                  <span className="mb-3 inline-block rounded-full bg-[#4bbb00]/10 px-4 py-1 text-xs font-bold text-[#4bbb00]">{post.pillar}</span>
                   <h3 className="mb-2 text-base font-extrabold text-[#2d0057]">{post.title}</h3>
                   <p className="mb-4 text-sm text-[#555]">{post.excerpt}</p>
                   <span className="inline-flex items-center gap-1 text-sm font-bold text-[#ff006b]">Leer más <span className="transition-transform group-hover:translate-x-1">→</span></span>
