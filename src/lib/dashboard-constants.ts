@@ -90,6 +90,6 @@ export const SIDEBAR_ITEMS = [
   { key: "pacientes", label: "Pacientes", icon: "🐾", href: "/admin/pacientes" },
   { key: "inventario", label: "Inventario", icon: "📦", href: "/admin/inventario" },
   { key: "estancias", label: "Estancias", icon: "🏡", href: "/admin/estancias" },
-  { key: "blog", label: "Blog", icon: "✍️", href: "/admin/blog-editor" },
   { key: "resenas", label: "Reseñas", icon: "⭐", href: "/admin/resenas" },
+  { key: "leads", label: "Leads", icon: "📊", href: "/admin/leads" },
 ] as const;
