@@ -57,7 +57,7 @@ export default function LandingEstanciaClient() {
               </div>
             </FadeIn>
           </div>
-          <FadeIn direction="scale" className="hidden lg:block">
+          <FadeIn direction="scale" className="mt-8 lg:mt-0">
             <img src="/coyotl-hero.png" alt="Mascota feliz en Estancia Coyotl Can Lindavista" className="rounded-3xl border-4 border-white/10 shadow-2xl" />
           </FadeIn>
         </div>

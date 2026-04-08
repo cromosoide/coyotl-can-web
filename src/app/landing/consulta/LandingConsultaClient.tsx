@@ -56,7 +56,7 @@ export default function LandingConsultaClient() {
               </div>
             </FadeIn>
           </div>
-          <FadeIn direction="scale" className="hidden lg:block">
+          <FadeIn direction="scale" className="mt-8 lg:mt-0">
             <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=800&q=80" alt="Consulta veterinaria en Coyotl Can Lindavista CDMX" className="rounded-3xl shadow-xl" />
           </FadeIn>
         </div>
