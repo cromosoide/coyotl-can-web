@@ -18,7 +18,7 @@ export default function EquipoCoyotl() {
             En Coyotl Can contamos con un equipo de médicos veterinarios con formación en la Facultad de Medicina Veterinaria y Zootecnia de la UNAM. Nuestra Directora Médica lidera una red de especialistas certificados en áreas como ortopedia, oftalmología, radiología y atención de aves y especies exóticas.
           </p>
           <p className="mb-4 text-base leading-relaxed text-[#555]">
-            Desde hace más de 15 años atendemos a las familias de Lindavista, colonia Vallejo, Tepeyac, Industrial, Ticoman y toda la alcaldía Gustavo A. Madero en la Ciudad de México. Nos hemos convertido en una clínica veterinaria de referencia en la zona norte de la CDMX.
+            Desde hace más de 15 años atendemos a las familias de Lindavista, colonia Vallejo, Tepeyac, Industrial, Ticomán y toda la alcaldía Gustavo A. Madero en la Ciudad de México. Nos hemos convertido en una clínica veterinaria de referencia en la zona norte de la CDMX.
           </p>
           <p className="text-base leading-relaxed text-[#555]">
             Nuestro compromiso es ofrecer atención veterinaria de calidad con calidez humana. Creemos que cada mascota merece el mismo cuidado que le daríamos a un miembro de nuestra propia familia. Por eso nuestro lema es <strong className="text-[#ff006b]">Medicina con alma</strong>.

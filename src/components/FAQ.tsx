@@ -72,7 +72,7 @@ const FAQS: FAQItem[] = [
     q: "¿Dónde están ubicados exactamente?",
     a: (
       <>
-        Coyotl Can está en <strong>Irapuato 11, colonia Lindavista, alcaldía Gustavo A. Madero, Ciudad de México, C.P. 07300</strong>. Estamos a una cuadra del metro Lindavista (Línea 6) y muy cerca de Avenida Montevideo. Si vienes desde Indios Verdes, Vallejo, Tepeyac, Industrial o Ticoman, llegas en menos de 10 minutos. Tenemos facilidad de estacionamiento en la calle.{" "}
+        Coyotl Can está en <strong>Irapuato 11, colonia Lindavista, alcaldía Gustavo A. Madero, Ciudad de México, C.P. 07300</strong>. Estamos a una cuadra del metro Lindavista (Línea 6) y muy cerca de Avenida Montevideo. Si vienes desde Indios Verdes, Vallejo, Tepeyac, Industrial o Ticomán, llegas en menos de 10 minutos. Tenemos facilidad de estacionamiento en la calle.{" "}
         <a href="#contacto" className="font-semibold text-[#ff006b] underline">Ver mapa</a>.
       </>
     ),

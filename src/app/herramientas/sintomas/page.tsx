@@ -12,8 +12,8 @@ const SINTOMAS = [
 
 const DURACION = [
   { label: "Hoy empezó", value: "hoy", nivel: 1 },
-  { label: "1-3 días", value: "1-3 dias", nivel: 2 },
-  { label: "Más de 3 días", value: "3+ dias", nivel: 3 },
+  { label: "1-3 días", value: "1-3 días", nivel: 2 },
+  { label: "Más de 3 días", value: "3+ días", nivel: 3 },
   { label: "Más de una semana", value: "1+ semana", nivel: 4 },
 ];
 
