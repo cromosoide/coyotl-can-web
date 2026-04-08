@@ -4,9 +4,9 @@ import FadeIn from "./animations/FadeIn";
 import AnimatedCounter from "./animations/AnimatedCounter";
 
 const stats = [
-  { target: 15, prefix: "+", label: "Años de experiencia", sublabel: "Cuidando a tu familia animal", color: "#fff" },
-  { target: 1000, prefix: "+", label: "Familias atendidas", sublabel: "Que confían en nosotros", color: "#fff" },
-  { target: 500, prefix: "+", label: "Intervenciones exitosas", sublabel: "De mínima invasión", color: "#fff" },
+  { target: 15, label: "Años de experiencia", sublabel: "Cuidando a tu familia animal", color: "#fff" },
+  { target: 1000, label: "Familias atendidas", sublabel: "Que confían en nosotros", color: "#fff" },
+  { target: 500, label: "Intervenciones exitosas", sublabel: "De mínima invasión", color: "#fff" },
   { target: 5, suffix: ".0", label: "Estrellas en Google", sublabel: "Calificación perfecta", color: "#ffab00" },
 ];
 
