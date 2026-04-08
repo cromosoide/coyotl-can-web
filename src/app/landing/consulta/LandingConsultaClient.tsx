@@ -42,8 +42,11 @@ export default function LandingConsultaClient() {
             </FadeIn>
             <FadeIn delay={0.4}>
               <div className="mb-8 flex flex-col gap-3 sm:flex-row">
-                <a href={WA} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.preventDefault(); setShowAgenda(true); }} className="inline-flex items-center justify-center rounded-2xl bg-[#ff006b] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#ff006b]/20 transition-all hover:bg-[#e6005f] hover:shadow-xl active:scale-95">Agendar consulta ahora</a>
-                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-[#25D366] px-8 py-4 text-base font-bold text-[#25D366] transition-all hover:bg-[#25D366]/5 active:scale-95">Prefiero WhatsApp</a>
+                <a href={WA} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.preventDefault(); setShowAgenda(true); }} className="inline-flex items-center justify-center rounded-2xl bg-[#ff006b] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#ff006b]/20 transition-all hover:bg-[#e6005f] hover:shadow-xl active:scale-95">Agendar mi cita hoy — $250</a>
+                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-[#25D366] px-8 py-4 text-base font-bold text-[#25D366] transition-all hover:bg-[#25D366]/5 active:scale-95">
+                  <span>Prefiero WhatsApp</span>
+                  <span className="text-xs font-normal text-[#25D366]/70">⏰ Respuesta en menos de 5 min</span>
+                </a>
               </div>
             </FadeIn>
             <FadeIn delay={0.5}>
@@ -146,7 +149,7 @@ export default function LandingConsultaClient() {
           <FadeIn>
             <h2 className="mb-4 text-2xl font-extrabold text-[#2d0057] sm:text-3xl">Tu mascota no puede esperar</h2>
             <p className="mb-8 text-[#555]">Agenda tu consulta hoy y dale la atención que merece.</p>
-            <a href={WA} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.preventDefault(); setShowAgenda(true); }} className="mb-4 inline-flex items-center justify-center rounded-2xl bg-[#ff006b] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[#ff006b]/20 transition-all hover:bg-[#e6005f] active:scale-95">Agendar consulta ahora</a>
+            <a href={WA} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.preventDefault(); setShowAgenda(true); }} className="mb-4 inline-flex items-center justify-center rounded-2xl bg-[#ff006b] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[#ff006b]/20 transition-all hover:bg-[#e6005f] active:scale-95">Agendar mi cita hoy — $250</a>
             <div className="flex flex-wrap justify-center gap-4 text-xs text-[#888]"><span>✓ Sin costo de agenda</span><span>✓ Respuesta inmediata</span><span>✓ Irapuato 11, Lindavista</span></div>
           </FadeIn>
         </div>
@@ -154,6 +157,13 @@ export default function LandingConsultaClient() {
 
       <MapaContacto />
       <footer className="bg-[#2d0057] py-6 text-center"><p className="text-xs text-white/40">&copy; {new Date().getFullYear()} Coyotl Can · Clínica Veterinaria Integral · Lindavista, CDMX</p></footer>
+      {/* STICKY CTA BAR */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-gray-200 bg-white px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] md:hidden">
+        <a href={WA} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.preventDefault(); setShowAgenda(true); }} className="flex w-full items-center justify-center rounded-2xl bg-[#ff006b] py-3.5 text-base font-bold text-white shadow-lg shadow-[#ff006b]/20">
+          Agendar mi cita hoy — $250
+        </a>
+      </div>
+
       <AgendaModal open={showAgenda} onClose={() => setShowAgenda(false)} defaultService="Consulta General" />
     </main>
   );

@@ -43,8 +43,11 @@ export default function LandingEstanciaClient() {
             </FadeIn>
             <FadeIn delay={0.4}>
               <div className="mb-8 flex flex-col gap-3 sm:flex-row">
-                <a href={WA} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.preventDefault(); setShowAgenda(true); }} className="inline-flex items-center justify-center rounded-2xl bg-[#ffab00] px-8 py-4 text-base font-bold text-white shadow-lg transition-all hover:bg-[#e69a00] hover:shadow-xl active:scale-95">Reservar estancia</a>
-                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/40 px-8 py-4 text-base font-bold text-white transition-all hover:bg-white/10 active:scale-95">Cotizar por WhatsApp</a>
+                <a href={WA} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.preventDefault(); setShowAgenda(true); }} className="inline-flex items-center justify-center rounded-2xl bg-[#ffab00] px-8 py-4 text-base font-bold text-white shadow-lg transition-all hover:bg-[#e69a00] hover:shadow-xl active:scale-95">Reservar estancia — $350/noche</a>
+                <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/40 px-8 py-4 text-base font-bold text-white transition-all hover:bg-white/10 active:scale-95">
+                  <span>Cotizar por WhatsApp</span>
+                  <span className="text-xs font-normal text-white/60">⏰ Respuesta en menos de 5 min</span>
+                </a>
               </div>
             </FadeIn>
             <FadeIn delay={0.5}>
@@ -142,7 +145,7 @@ export default function LandingEstanciaClient() {
             </div>
             <h2 className="mb-4 text-2xl font-extrabold text-[#2d0057] sm:text-3xl">Tu mascota merece las mejores vacaciones también</h2>
             <p className="mb-8 text-[#555]">En temporada alta los lugares se llenan rápido. Reserva hoy y viaja tranquilo.</p>
-            <a href={WA} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.preventDefault(); setShowAgenda(true); }} className="mb-4 inline-flex items-center justify-center rounded-2xl bg-[#8b00fb] px-10 py-4 text-lg font-bold text-white shadow-lg transition-all hover:bg-[#7400d4] active:scale-95">Reservar estancia ahora</a>
+            <a href={WA} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.preventDefault(); setShowAgenda(true); }} className="mb-4 inline-flex items-center justify-center rounded-2xl bg-[#8b00fb] px-10 py-4 text-lg font-bold text-white shadow-lg transition-all hover:bg-[#7400d4] active:scale-95">Reservar estancia — $350/noche</a>
             <div className="flex flex-wrap justify-center gap-4 text-xs text-[#888]"><span>✓ Reserva sin compromiso</span><span>✓ Veterinario en sitio</span><span>✓ Foto diaria garantizada</span></div>
           </FadeIn>
         </div>
@@ -150,6 +153,13 @@ export default function LandingEstanciaClient() {
 
       <MapaContacto />
       <footer className="bg-[#2d0057] py-6 text-center"><p className="text-xs text-white/40">&copy; {new Date().getFullYear()} Coyotl Can · Clínica Veterinaria Integral · Lindavista, CDMX</p></footer>
+      {/* STICKY CTA BAR */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-gray-200 bg-white px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] md:hidden">
+        <a href={WA} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.preventDefault(); setShowAgenda(true); }} className="flex w-full items-center justify-center rounded-2xl bg-[#8b00fb] py-3.5 text-base font-bold text-white shadow-lg">
+          Reservar estancia — $350/noche
+        </a>
+      </div>
+
       <AgendaModal open={showAgenda} onClose={() => setShowAgenda(false)} defaultService="Estancia Coyotl" />
     </main>
   );
