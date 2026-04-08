@@ -119,8 +119,8 @@ export const REVIEWS = [
 ] as const;
 
 export const STATS = {
-  experiencia: "15+",
-  familias: "1,000+",
+  experiencia: "+15",
+  familias: "+1,000",
   intervenciones: "+500",
 } as const;
 

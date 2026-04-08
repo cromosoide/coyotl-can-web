@@ -67,12 +67,12 @@ export default function Hero() {
             <FadeIn delay={0.4}>
               <div className="flex flex-wrap items-center gap-6">
                 <div className="flex items-center gap-2">
-                  <AnimatedCounter target={15} suffix="+" className="text-2xl font-extrabold text-[#ff006b] sm:text-3xl" />
+                  <AnimatedCounter target={15} prefix="+" className="text-2xl font-extrabold text-[#ff006b] sm:text-3xl" />
                   <span className="text-xs text-[#555]">años de<br />experiencia</span>
                 </div>
                 <div className="h-8 w-px bg-gray-200" />
                 <div className="flex items-center gap-2">
-                  <AnimatedCounter target={1000} suffix="+" className="text-2xl font-extrabold text-[#ff006b] sm:text-3xl" />
+                  <AnimatedCounter target={1000} prefix="+" className="text-2xl font-extrabold text-[#ff006b] sm:text-3xl" />
                   <span className="text-xs text-[#555]">familias<br />atendidas</span>
                 </div>
               </div>

@@ -271,7 +271,7 @@ Una buena alimentación es la base de la salud de tu perro. En Coyotl Can, clín
 - Evitar sobras de comida humana
 - Premios no deben ser más del 10% de la dieta
 
-## Senior (7+ años)
+## Senior (+7 años)
 
 - Croqueta para senior (menos calorías, más fibra)
 - 2 comidas al día en porciones más pequeñas
@@ -424,7 +424,7 @@ Muchos dueños vacunan a su gatito pero olvidan los refuerzos anuales. Las vacun
 
 - **Gatitos (0-1 año):** Cada 1-2 meses para vacunas y seguimiento
 - **Adultos (1-7 años):** Una vez al año como mínimo
-- **Senior (7+ años):** Cada 6 meses con análisis de sangre
+- **Senior (+7 años):** Cada 6 meses con análisis de sangre
 
 ## Veterinario para gatos en Lindavista
 

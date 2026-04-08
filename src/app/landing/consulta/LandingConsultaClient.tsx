@@ -81,8 +81,8 @@ export default function LandingConsultaClient() {
           </FadeIn>
           <div className="grid gap-8 sm:grid-cols-3">
             {[
-              { target: 500, suffix: "+", label: "Intervenciones exitosas", color: "#ff006b" },
-              { target: 10, suffix: " días", prefix: "8-", label: "Recuperación promedio", sublabel: "vs 30+ días método tradicional", color: "#8b00fb" },
+              { target: 500, prefix: "+", label: "Intervenciones exitosas", color: "#ff006b" },
+              { target: 10, suffix: " días", prefix: "8-", label: "Recuperación promedio", sublabel: "vs +30 días método tradicional", color: "#8b00fb" },
               { target: 90, suffix: "%", label: "Menos molestias", sublabel: "post-procedimiento", color: "#4bbb00" },
             ].map((stat, i) => (
               <FadeIn key={stat.label} delay={i * 0.1}>

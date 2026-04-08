@@ -117,7 +117,7 @@ const FAQS: FAQItem[] = [
     q: "¿Qué es la intervención de mínima invasión?",
     a: (
       <>
-        Es una técnica veterinaria avanzada que permite realizar procedimientos con incisiones muy pequeñas, lo que significa <strong>menos dolor, recuperación más rápida (8-10 días vs 30+)</strong> y menor riesgo para tu mascota. En Coyotl Can llevamos más de 500 intervenciones exitosas con esta técnica. Si tu mascota necesita un procedimiento y quieres saber si es candidata para mínima invasión,{" "}
+        Es una técnica veterinaria avanzada que permite realizar procedimientos con incisiones muy pequeñas, lo que significa <strong>menos dolor, recuperación más rápida (8-10 días vs +30)</strong> y menor riesgo para tu mascota. En Coyotl Can llevamos más de 500 intervenciones exitosas con esta técnica. Si tu mascota necesita un procedimiento y quieres saber si es candidata para mínima invasión,{" "}
         <a href={`${WA_LINK}?text=${encodeURIComponent("Hola, quisiera más información sobre intervención de mínima invasión")}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#25D366] underline">consúltanos por WhatsApp</a>.
       </>
     ),
